@@ -6,17 +6,15 @@ class NFactorial {
         int result = 1;
         System.out.println("Welcome to the factorial calculator!\nPlease choose a non-negative number to calculate the factorial of:");
         Scanner input = new Scanner(System.in);
-        final int N = input.nextInt();
-        int n = N;
+        int number = input.nextInt();
         input.close();
-        if (n == 0) {
+        if (number == 0) {
             result = 1;
         } else {
-            while (n > 1) {
-                result *= n;
-                n--;
+            for (int i = number; i > 1; i--) {
+                result *= i;
             }
         }
-        System.out.println("The result of "+N+"! is: "+result);
+        System.out.println("The result of "+number+"! is: "+result);
     }
 }
