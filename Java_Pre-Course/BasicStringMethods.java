@@ -10,9 +10,9 @@ class BasicStringMethods {
         } catch (IndexOutOfBoundsException e) {
             System.out.println("The provided index is out of bounds.");
         }
-        myEquals(arr,st);
-        myLastIndex(arr,c);
-        myLength(st);
+        System.out.println(myEquals(arr,st));
+        System.out.println(myLastIndex(arr,c));
+        System.out.println(myLength(st));
     }
     public static char myCharAt(char[] charArray, int index) {
         /* This method returns the element value of the given char array in the given index */
@@ -21,16 +21,15 @@ class BasicStringMethods {
         // }
         return charArray[index];
     }
-    public static boolean myEquals(char[] charArray, String s) {
+    public static boolean myEquals(char[] charArray, String str) {
         /* This method return 'true' if the array and the string hold the exact same char values, 'false' if they don't */
         boolean isEqual = true;
-        char[] sArray = new char[s.length()];
-        if (!(sArray.length == charArray.length)) {
+        if (str.length() != charArray.length) {
             isEqual = false;
         } else {
-            for (int i=0;i<s.length();i++) {
-                sArray[i] = s.charAt(i);
-                if (!(sArray[i] == charArray[i])) {
+            for (int i = 0; i < str.length(); i++) {
+                // sArray[i] = s.charAt(i);
+                if (str.charAt(i) != charArray[i]) {
                     isEqual = false;
                 }
             }
@@ -48,6 +47,7 @@ class BasicStringMethods {
         return index;
     }
     public static int myLength(String st) {
+        /* This method returns the length of a string */
         int i = 0;
         for (char c : st.toCharArray()) {
             i++;

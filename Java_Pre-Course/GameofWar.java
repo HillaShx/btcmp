@@ -1,5 +1,4 @@
 import java.util.*;
-import java.util.concurrent.*;
 
 class GameofWar {
     public static void main(String args[]) {
@@ -7,6 +6,8 @@ class GameofWar {
         Scanner input = new Scanner(System.in);
         int coins = 50;
         int bet;
+        Random r = new Random();
+        String suit[] = {"\u2665","\u2666","\u2663","\u2660"};
         boolean keepPlaying = true;
         String invalidInformationMessage = "You have entered invalid information";
         System.out.println("*~\u2665~\u2666~\u2663~\u2660~Welcome to WAR!~\u2660~\u2663~\u2666~\u2665~*");
@@ -39,11 +40,14 @@ class GameofWar {
                         System.out.println("Are you trying to cheat? You can't bet a negative number of coins. Goodbye!");
                         System.exit(0);
                     } else {
-                        int computerCard = ThreadLocalRandom.current().nextInt(1,13);
-                        int userCard = ThreadLocalRandom.current().nextInt(1,13);
-                        String suit[] = {"\u2665","\u2666","\u2663","\u2660"};
-                        int computerSuit = ThreadLocalRandom.current().nextInt(0,4);
-                        int userSuit = ThreadLocalRandom.current().nextInt(0,4);
+                        int computerCard = r.nextInt(12) + 1;
+                        int userCard = r.nextInt(12) + 1;
+                        // int computerCard = ThreadLocalRandom.current().nextInt(1,13);
+                        // int userCard = ThreadLocalRandom.current().nextInt(1,13);
+                        int computerSuit = r.nextInt(4);
+                        int userSuit = r.nextInt(4);
+                        // int computerSuit = ThreadLocalRandom.current().nextInt(0,4);
+                        // int userSuit = ThreadLocalRandom.current().nextInt(0,4);
                         System.out.println("***\nThe computer played: " + computerCard + suit[computerSuit]);
                         System.out.println("You played: " + userCard + suit[userSuit]);
                         if (computerCard > userCard) {
@@ -126,11 +130,10 @@ class GameofWar {
                         System.out.println("Are you trying to cheat? You can't bet a negative number of coins. Goodbye!");
                         System.exit(0);
                     }
-                    int player1Card = ThreadLocalRandom.current().nextInt(1,13);
-                    int player2Card = ThreadLocalRandom.current().nextInt(1,13);
-                    String suit[] = {"\u2665","\u2666","\u2663","\u2660"};
-                    int player1Suit = ThreadLocalRandom.current().nextInt(0,4);
-                    int player2Suit = ThreadLocalRandom.current().nextInt(0,4);
+                    int player1Card = r.nextInt(12) + 1;
+                    int player2Card = r.nextInt(12) + 1;
+                    int player1Suit = r.nextInt(4);
+                    int player2Suit = r.nextInt(4);
                     System.out.println("***\n" + players[0] + " played: " + player1Card + suit[player1Suit]);
                     System.out.println(players[1] + " played: " + player2Card + suit[player2Suit]);
                     if (player1Card > player2Card) {

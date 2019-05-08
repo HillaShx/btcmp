@@ -4,6 +4,7 @@ class IndexMinMaxElement {
     public static void main(String args[]) {
         /* This program has a method that finds the minimum and maximum values in an array given as a parameter, and returns a new array containing the index numbers of min and max. */
         int[] inputArr = {43,21,24,90};
+        System.out.println(Arrays.toString(getMinMax_Array(inputArr)));
     }
     public static int[] getMinMax_Array(int [] arr) {
         int len = arr.length;
