@@ -19,6 +19,7 @@ class HangmanGame {
     }
     public static String wordSelector() {
         // This method selects and returns the secret word of the game
+        Random r = new Random();
         Scanner fileScan = null;
         try {
             fileScan = new Scanner(new File("/home/hillash/Documents/Repositories/btcmp/Java_Pre-Course/wordBank.csv"));
@@ -31,7 +32,7 @@ class HangmanGame {
             word = fileScan.nextLine();
             wordBank.add(word);
         }
-        int arrIndex = ThreadLocalRandom.current().nextInt(0,wordBank.size());
+        int arrIndex = r.nextInt(wordBank.size());
         System.out.println("");
         return wordBank.get(arrIndex);
     }
