@@ -49,6 +49,7 @@ class HangmanGame {
             boolean loseAttempt = true;
             Scanner in  = new Scanner(System.in);
             String input = in.nextLine().toLowerCase();
+            in.close();
             if (input.length() == 1) {
                 char guess = input.charAt(0);
                 if ((input.length() > 1) || (input.length() < 1)) {

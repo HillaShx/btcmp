@@ -1,5 +1,3 @@
-import java.util.*;
-
 class SevenBoom {
     public static void main(String args[]) {
         /* This program prints out numbers 1-100. Whenever it gets to a number that either contains the digit 7 or is divisible by 7, it prints out "BOOM". */

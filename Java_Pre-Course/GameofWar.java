@@ -198,6 +198,7 @@ class GameofWar {
                     System.out.println(invalidInformationMessage);
                 }
             }
+            input.close();
             if (player1coins == 0) {
                 System.out.println(players[0] + " has run our of coins. " + players[1] + " has won the game! Goodbye!");
             } else if (player2coins == 0) {

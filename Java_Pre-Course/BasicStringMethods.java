@@ -1,5 +1,3 @@
-import java.util.*;
-
 class BasicStringMethods {
     public static void main(String[] args) {
         char[] arr = {'h','e','l','l','o'};
