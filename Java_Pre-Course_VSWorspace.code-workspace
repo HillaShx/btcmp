@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "Java_Pre-Course"
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			"**/.classpath": true,
+			"**/.project": true,
+			"**/.settings": true,
+			"**/.factorypath": true
+		}
+	}
+}
