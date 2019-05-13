@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <style>
+      #outer {
+        width: 100px;
+        height: 100px;
+        background: darkcyan;
+        margin: 50px;
+        position: absolute;
+      }
+      #inner {
+        width: 50px;
+        height: 50px;
+        background: lightgreen;
+        position: relative;
+        top: 10px;
+      }
+      #next {
+        position: absolute;
+        bottom:0;
+      }
+    </style>
+  </head>
+  <body>
+      <div id="outer">
+        phase 1<br/>
+        phase 2<br/>
+        phase 3
+        <div id="inner">
+          <div id="next">Next</div>
+        </div>
+      </div>    
+  </body>
+</html>

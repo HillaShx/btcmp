@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Recipes - Guacamole</title>
+    <style>
+      .container {
+        position: absolute;
+        height: 100%;
+        left: 180px;
+      }
+      .recipe-title {
+        margin-bottom: 0;
+      }
+      .recipe-main-image {
+        margin-top: 36px;
+      }
+      #sidemenu {
+        position:fixed;
+        height: 100%;
+        width: 160px;
+        background-color: aquamarine;
+      }
+      #sidemenu img {
+        width: 150px;
+        position: absolute;
+        left: 5px;
+        top: 10px;
+      }
+      .navigation {
+        position: absolute;
+        top: 200px;
+        text-align: right;
+      }
+      .navigation a {
+        display: block;
+        text-decoration: none;
+        color: blueviolet;
+        font-weight: bold;
+        padding: 10px;
+        margin: 2px;
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="sidemenu">
+      <img src="guac_logo.png" alt="The Guac Logo">
+      <div class="navigation">
+        <a href="#recipe-title">Title</a>
+        <a href="#recipe-ingredients">Ingredients</a>
+        <a href="#recipe-instructions">Instructions</a>  
+      </div>
+    </div>
+    <div class="container">
+      <h1 class="recipe-title" id="recipe-title">Guacamole</h1>
+      <a href="https://www.allrecipes.com/recipe/14231/">Recipe page on allrecipes.com</a>
+      <div class="recipe-main-image">
+        <img src="https://images.media-allrecipes.com/userphotos/720x405/4521556.jpg" alt="Guacamole">
+      </div>
+      <div id="recipe-ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+          <li>3 avocados - peeled, pitted, and mashed</li>
+          <li>1 lime, juiced</li>
+          <li>1 teaspoon salt</li>
+          <li>1/2 cup diced onion</li>
+          <li>2 roma (plum) tomatoes, diced</li>
+          <li>1 teaspoon minced garlic</li>
+          <li>1 pinch ground cayenne pepper</li>
+        </ul>
+      </div>
+      <div id="recipe-instructions">
+        <h2>Instructions</h2>
+        <img src="https://images.media-allrecipes.com/userphotos/720x405/6601243.jpg" alt="">
+        <ol>
+          <li>In a medium bowl, mash together the avocados, lime juice, and salt.</li>
+          <li>Mix in onion, tomatoes, and garlic.</li>
+          <li>Stir in cayenne pepper.</li>
+          <li>Refrigerate 1 hour for best flavor, or serve immediately.</li>
+        </ol>
+      </div>
+    </div>
+    
+  </body>
+</html>

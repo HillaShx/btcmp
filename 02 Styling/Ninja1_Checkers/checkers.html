@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Checkerboards</title>
+    <style>
+      table {
+        border-spacing: 0;
+        display: inline;
+        border-width: 5px;
+        border-style: solid;
+        border-color: black;
+      }
+      img.banner {
+        position: absolute;
+        width: 1192px;
+        left: 275px;
+        top: -110px;
+        z-index: 1;
+      }
+      .container {
+        text-align: center;
+        z-index: 2;
+        position: relative;
+      }
+      .checker-tile {
+        height: 30px;
+        width: 30px;
+      }
+      .tile-dark {
+        background-color: black;
+      }
+      .white-board .tile-light {
+        background-color: white;
+      }
+      .blue-board .tile-light {
+        background-color: blue;
+      }
+      .red-board .tile-light {
+        background-color: red;
+      }
+      td img {
+        height: 30px;
+        width: 30px;
+      }
+      h1 {
+        text-align: center;
+        z-index: 2;
+        position: relative;
+      }
+      .page-content {
+        position: relative;
+        margin-top: 72px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to Checkers</h1>
+    <div class="page-content">
+      <img class="banner" src="banner.png" alt="the background banner">
+      <div class="container">
+        <table class="white-board">
+          <tr>
+            <td class="checker-tile tile-light"><img src="brown_piece.png" alt="brown piece"></td><td class="checher-tile tile-dark"><img src="brown_piece.png" alt="brown piece"></td><td class="checker-tile tile-light"><img src="brown_piece.png" alt="brown piece"></td><td class="checher-tile tile-dark"><img src="brown_piece.png" alt="brown piece"></td><td class="checker-tile tile-light"><img src="brown_piece.png" alt="brown piece"></td><td class="checher-tile tile-dark"><img src="brown_piece.png" alt="brown piece"></td><td class="checker-tile tile-light"><img src="brown_piece.png" alt="brown piece"></td><td class="checher-tile tile-dark"><img src="brown_piece.png" alt="brown piece"></td>
+          </tr>
+          <tr>
+            <td class="checher-tile tile-dark"><img src="brown_piece.png" alt="brown piece"></td><td class="checker-tile tile-light"><img src="brown_piece.png" alt="brown piece"></td><td class="checher-tile tile-dark"><img src="brown_piece.png" alt="brown piece"></td><td class="checker-tile tile-light"><img src="brown_piece.png" alt="brown piece"></td><td class="checher-tile tile-dark"><img src="brown_piece.png" alt="brown piece"></td><td class="checker-tile tile-light"><img src="brown_piece.png" alt="brown piece"></td><td class="checher-tile tile-dark"><img src="brown_piece.png" alt="brown piece"></td><td class="checker-tile tile-light"><img src="brown_piece.png" alt="brown piece"></td>
+          </tr>
+          <tr>
+            <td class="checker-tile tile-light"></td><td class="checher-tile tile-dark"></td><td class="checker-tile tile-light"></td><td class="checher-tile tile-dark"></td><td class="checker-tile tile-light"></td><td class="checher-tile tile-dark"></td><td class="checker-tile tile-light"></td><td class="checher-tile tile-dark"></td>
+          </tr>
+          <tr>
+            <td class="checher-tile tile-dark"></td><td class="checker-tile tile-light"></td><td class="checher-tile tile-dark"></td><td class="checker-tile tile-light"></td><td class="checher-tile tile-dark"></td><td class="checker-tile tile-light"></td><td class="checher-tile tile-dark"></td><td class="checker-tile tile-light"></td>
+          </tr>
+          <tr>
+            <td class="checker-tile tile-light"><img src="black_piece.png" alt="black piece"></td><td class="checher-tile tile-dark"><img src="black_piece.png" alt="black piece"></td><td class="checker-tile tile-light"><img src="black_piece.png" alt="black piece"></td><td class="checher-tile tile-dark"><img src="black_piece.png" alt="black piece"></td><td class="checker-tile tile-light"><img src="black_piece.png" alt="black piece"></td><td class="checher-tile tile-dark"><img src="black_piece.png" alt="black piece"></td><td class="checker-tile tile-light"><img src="black_piece.png" alt="black piece"></td><td class="checher-tile tile-dark"><img src="black_piece.png" alt="black piece"></td>
+          </tr>
+          <tr>
+            <td class="checher-tile tile-dark"><img src="black_piece.png" alt="black piece"></td><td class="checker-tile tile-light"><img src="black_piece.png" alt="black piece"></td><td class="checher-tile tile-dark"><img src="black_piece.png" alt="black piece"></td><td class="checker-tile tile-light"><img src="black_piece.png" alt="black piece"></td><td class="checher-tile tile-dark"><img src="black_piece.png" alt="black piece"></td><td class="checker-tile tile-light"><img src="black_piece.png" alt="black piece"></td><td class="checher-tile tile-dark"><img src="black_piece.png" alt="black piece"></td><td class="checker-tile tile-light"><img src="black_piece.png" alt="black piece"></td>
+          </tr>
+        </table>
+        <table class="blue-board">
+          <tr>
+            <td class="checker-tile tile-light"><img src="brown_piece.png" alt="brown piece"></td><td class="checher-tile tile-dark"><img src="brown_piece.png" alt="brown piece"></td><td class="checker-tile tile-light"><img src="brown_piece.png" alt="brown piece"></td><td class="checher-tile tile-dark"><img src="brown_piece.png" alt="brown piece"></td><td class="checker-tile tile-light"><img src="brown_piece.png" alt="brown piece"></td><td class="checher-tile tile-dark"><img src="brown_piece.png" alt="brown piece"></td><td class="checker-tile tile-light"><img src="brown_piece.png" alt="brown piece"></td><td class="checher-tile tile-dark"><img src="brown_piece.png" alt="brown piece"></td>
+          </tr>
+          <tr>
+            <td class="checher-tile tile-dark"><img src="brown_piece.png" alt="brown piece"></td><td class="checker-tile tile-light"><img src="brown_piece.png" alt="brown piece"></td><td class="checher-tile tile-dark"><img src="brown_piece.png" alt="brown piece"></td><td class="checker-tile tile-light"><img src="brown_piece.png" alt="brown piece"></td><td class="checher-tile tile-dark"><img src="brown_piece.png" alt="brown piece"></td><td class="checker-tile tile-light"><img src="brown_piece.png" alt="brown piece"></td><td class="checher-tile tile-dark"><img src="brown_piece.png" alt="brown piece"></td><td class="checker-tile tile-light"><img src="brown_piece.png" alt="brown piece"></td>
+          </tr>
+          <tr>
+            <td class="checker-tile tile-light"></td><td class="checher-tile tile-dark"></td><td class="checker-tile tile-light"></td><td class="checher-tile tile-dark"></td><td class="checker-tile tile-light"></td><td class="checher-tile tile-dark"></td><td class="checker-tile tile-light"></td><td class="checher-tile tile-dark"></td>
+          </tr>
+          <tr>
+            <td class="checher-tile tile-dark"></td><td class="checker-tile tile-light"></td><td class="checher-tile tile-dark"></td><td class="checker-tile tile-light"></td><td class="checher-tile tile-dark"></td><td class="checker-tile tile-light"></td><td class="checher-tile tile-dark"></td><td class="checker-tile tile-light"></td>
+          </tr>
+          <tr>
+            <td class="checker-tile tile-light"><img src="black_piece.png" alt="black piece"></td><td class="checher-tile tile-dark"><img src="black_piece.png" alt="black piece"></td><td class="checker-tile tile-light"><img src="black_piece.png" alt="black piece"></td><td class="checher-tile tile-dark"><img src="black_piece.png" alt="black piece"></td><td class="checker-tile tile-light"><img src="black_piece.png" alt="black piece"></td><td class="checher-tile tile-dark"><img src="black_piece.png" alt="black piece"></td><td class="checker-tile tile-light"><img src="black_piece.png" alt="black piece"></td><td class="checher-tile tile-dark"><img src="black_piece.png" alt="black piece"></td>
+          </tr>
+          <tr>
+            <td class="checher-tile tile-dark"><img src="black_piece.png" alt="black piece"></td><td class="checker-tile tile-light"><img src="black_piece.png" alt="black piece"></td><td class="checher-tile tile-dark"><img src="black_piece.png" alt="black piece"></td><td class="checker-tile tile-light"><img src="black_piece.png" alt="black piece"></td><td class="checher-tile tile-dark"><img src="black_piece.png" alt="black piece"></td><td class="checker-tile tile-light"><img src="black_piece.png" alt="black piece"></td><td class="checher-tile tile-dark"><img src="black_piece.png" alt="black piece"></td><td class="checker-tile tile-light"><img src="black_piece.png" alt="black piece"></td>
+          </tr>
+        </table>
+        <table class="red-board">
+          <tr>
+            <td class="checker-tile tile-light"><img src="brown_piece.png" alt="brown piece"></td><td class="checher-tile tile-dark"><img src="brown_piece.png" alt="brown piece"></td><td class="checker-tile tile-light"><img src="brown_piece.png" alt="brown piece"></td><td class="checher-tile tile-dark"><img src="brown_piece.png" alt="brown piece"></td><td class="checker-tile tile-light"><img src="brown_piece.png" alt="brown piece"></td><td class="checher-tile tile-dark"><img src="brown_piece.png" alt="brown piece"></td><td class="checker-tile tile-light"><img src="brown_piece.png" alt="brown piece"></td><td class="checher-tile tile-dark"><img src="brown_piece.png" alt="brown piece"></td>
+          </tr>
+          <tr>
+            <td class="checher-tile tile-dark"><img src="brown_piece.png" alt="brown piece"></td><td class="checker-tile tile-light"><img src="brown_piece.png" alt="brown piece"></td><td class="checher-tile tile-dark"><img src="brown_piece.png" alt="brown piece"></td><td class="checker-tile tile-light"><img src="brown_piece.png" alt="brown piece"></td><td class="checher-tile tile-dark"><img src="brown_piece.png" alt="brown piece"></td><td class="checker-tile tile-light"><img src="brown_piece.png" alt="brown piece"></td><td class="checher-tile tile-dark"><img src="brown_piece.png" alt="brown piece"></td><td class="checker-tile tile-light"><img src="brown_piece.png" alt="brown piece"></td>
+          </tr>
+          <tr>
+            <td class="checker-tile tile-light"></td><td class="checher-tile tile-dark"></td><td class="checker-tile tile-light"></td><td class="checher-tile tile-dark"></td><td class="checker-tile tile-light"></td><td class="checher-tile tile-dark"></td><td class="checker-tile tile-light"></td><td class="checher-tile tile-dark"></td>
+          </tr>
+          <tr>
+            <td class="checher-tile tile-dark"></td><td class="checker-tile tile-light"></td><td class="checher-tile tile-dark"></td><td class="checker-tile tile-light"></td><td class="checher-tile tile-dark"></td><td class="checker-tile tile-light"></td><td class="checher-tile tile-dark"></td><td class="checker-tile tile-light"></td>
+          </tr>
+          <tr>
+            <td class="checker-tile tile-light"><img src="black_piece.png" alt="black piece"></td><td class="checher-tile tile-dark"><img src="black_piece.png" alt="black piece"></td><td class="checker-tile tile-light"><img src="black_piece.png" alt="black piece"></td><td class="checher-tile tile-dark"><img src="black_piece.png" alt="black piece"></td><td class="checker-tile tile-light"><img src="black_piece.png" alt="black piece"></td><td class="checher-tile tile-dark"><img src="black_piece.png" alt="black piece"></td><td class="checker-tile tile-light"><img src="black_piece.png" alt="black piece"></td><td class="checher-tile tile-dark"><img src="black_piece.png" alt="black piece"></td>
+          </tr>
+          <tr>
+            <td class="checher-tile tile-dark"><img src="black_piece.png" alt="black piece"></td><td class="checker-tile tile-light"><img src="black_piece.png" alt="black piece"></td><td class="checher-tile tile-dark"><img src="black_piece.png" alt="black piece"></td><td class="checker-tile tile-light"><img src="black_piece.png" alt="black piece"></td><td class="checher-tile tile-dark"><img src="black_piece.png" alt="black piece"></td><td class="checker-tile tile-light"><img src="black_piece.png" alt="black piece"></td><td class="checher-tile tile-dark"><img src="black_piece.png" alt="black piece"></td><td class="checker-tile tile-light"><img src="black_piece.png" alt="black piece"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
