@@ -1,0 +1,22 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.top-banner {
+  height: 500px;
+  background-image: url("../img/cover.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.top-banner p {
+  font-size: 90px;
+}
+
+.valign {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}

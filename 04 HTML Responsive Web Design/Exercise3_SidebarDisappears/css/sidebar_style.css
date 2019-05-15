@@ -1,0 +1,28 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar {
+  width: 25%;
+  height: 800px;
+  display: inline-block;
+  background: darkblue;
+}
+
+.content {
+  width: 70%;
+  height: 800px;
+  display: inline-block;
+  background: lightgreen;
+}
+
+@media only screen and (max-width: 800px) {
+  .sidebar {
+    display: none;
+  }
+
+  .content {
+    width: 100%;
+  }
+}

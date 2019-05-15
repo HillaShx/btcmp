@@ -1,0 +1,13 @@
+.column {
+  width: 23%;
+  background: darkgoldenrod;
+  color: lightcyan;
+  display:inline-block;
+}
+
+@media only screen and (max-width: 1700px) {
+  .column {
+    display: block;
+    width: 80%;
+  }
+}

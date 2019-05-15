@@ -1,0 +1,55 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 17px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 21px;
+}
+
+a {
+  text-decoration: none;
+  color: #2eb0ed;
+}
+
+.navbar {
+  height: 48px;
+  background: rgba(45,45,45,0.98);
+  display: flex;
+  justify-content: center;
+}
+
+.navbar li {
+  text-decoration: none;
+  display: inline;
+  color: #ffffff;
+}
+
+span.logo {
+  background-image: url("../img/apple_icon_navbar.svg");
+  height: 200px;
+}
+
+.stripe {
+  text-align: center;
+  font-weight: 400;
+}
+
+.stripe.promo {
+  padding: 51px 0 52.7px 0;
+}
+
+.smaller-cap {
+  font-size: 28px;
+}

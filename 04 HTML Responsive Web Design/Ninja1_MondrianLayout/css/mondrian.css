@@ -1,0 +1,121 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  position: relative;
+  top: 15px;
+  left: 15px;
+  margin-right: 15px;
+  height: 500px;
+  width: 500px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  border: 1px solid black;
+  background: #fef9e6;
+}
+
+.container div {
+  border-style: solid;
+  border-color: black;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 28%;
+  border-width: 0;
+}
+
+.sidebar div {
+  display: block;
+}
+
+.box-1 {
+  height: 35%;
+  border-width: 0 1px 1px 0;
+}
+
+.box-2 {
+  height: 40%;
+  border-width: 0 1px 0 0;
+}
+
+.box-3 {
+  height: 25%;
+  border-width: 1px 1px 0 0;
+  background: #409cc5
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 72%;
+  border-width: 0;
+}
+
+.content div {
+  border-style: solid;
+  border-color: black;
+}
+
+.box-4 {
+  height: 75%;
+  border-width: 0 0 1px 0;
+  background: #ec4938;
+}
+
+.boxes-bottom-right {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 25%;
+  border-width: 0;
+}
+
+.box-5 {
+  width: 95%;
+  border-width: 0 1px 0 0;
+}
+
+.boxes-67 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 5%;
+  border-width: 0;
+}
+
+.box-6 {
+  height: 50%;
+  border-width: 0 0 1px 0;
+}
+
+.box-7 {
+  height: 50%;
+  border-width: 0;
+  background: #ffff00;
+}
+
+@media only screen and (max-width: 768px) {
+  .sidebar {
+    width: 18%;
+  }
+  .content {
+    width: 82%;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .sidebar {
+    display: none;
+  }
+
+  .content {
+    width: 100%;
+  }
+}
