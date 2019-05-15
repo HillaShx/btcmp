@@ -8,6 +8,7 @@ html {
   padding: 0;
   font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-size: 17px;
+  font-weight: 400;
 }
 
 h2 {
@@ -15,7 +16,8 @@ h2 {
 }
 
 h3 {
-  font-size: 21px;
+  font-size: 24px;
+  display: block;
 }
 
 a {
@@ -25,9 +27,10 @@ a {
 
 .navbar {
   height: 48px;
+  width: 100%;
   background: rgba(45,45,45,0.98);
-  display: flex;
-  justify-content: center;
+  position: fixed;
+  text-align: center;
 }
 
 .navbar li {
@@ -44,12 +47,48 @@ span.logo {
 .stripe {
   text-align: center;
   font-weight: 400;
+  padding: 6px 0;
+}
+
+.retail-tagline {
+  width: 600px;
+  margin: auto;
 }
 
 .stripe.promo {
   padding: 51px 0 52.7px 0;
+  font-size: 21px;
 }
 
 .smaller-cap {
   font-size: 28px;
+}
+
+.stripe.tv-4k {
+  background-image: url("../img/apple_tv_4k_cover.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 580px;
+  width: 1841px;
+}
+
+.half-stripe {
+  width: 902.5px;
+  height: 580px;
+  border-color: white;
+  border-style: solid;
+  border-width: 6px;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+
+.half-stripe.apple-tv {
+  border-left-width: 12px;
+  background-image: url("../img/apple_tv_cover.jpg");
+}
+
+.half-stripe.tv-plus {
+  border-right-width: 12px;
+  background-image: url("../img/apple_tv_plus_tile_cover.jpg");
 }

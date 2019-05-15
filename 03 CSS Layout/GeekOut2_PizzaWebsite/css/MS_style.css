@@ -50,19 +50,21 @@ html {
 
 .stripe {
   margin-top: 110px;
+  color: white;
+  font-size: 18px;
+}
+
+.stripe p {
+  margin: 16px 0;
 }
 
 .stripe .stripe-title {
-  height: 18px;
+  height: 23px;
   background-color: #c30080;
-
-  text-align: center;
-}
-
-.stripe .stripe-title {
   line-height: 2px;
   color: #ff7880;
-  font-size: 36px;
+  font-size: 46px;
+  text-align: center;
 }
 
 .menu .menu-items {
@@ -75,4 +77,34 @@ html {
 .menu-items a {
   margin: 0 12px;
   color: white;
+}
+
+.item-title {
+  margin-top: 67px;
+  margin-bottom: 32px;
+  font-size: 35px;
+  background-color: #c30080;
+  color:white;
+}
+
+.item-details {
+  position: relative;
+  left: 50px;
+  width: = calc(100%-500px);
+  display: inline-block;
+}
+
+.item-description {
+  color: #ff3c80;
+  font-size: 18px;
+  margin-bottom: 29px;
+}
+
+.item-img {
+  width: 680px;
+}
+
+.property-title {
+  font-size: 18px;
+  text-decoration: underline;
 }
