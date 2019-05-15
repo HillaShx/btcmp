@@ -1,0 +1,44 @@
+body {
+  height: 800px;
+  width: 1700px;
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  height: 15%;
+  border: 1px solid red;
+}
+
+.container {
+  height: 80%;
+  width: 100%;
+  text-align: center;
+}
+
+.sidebar {
+  display: inline-block;
+  height: 100%;
+  width: 170px;
+  margin: 15px;
+  border: 1px solid green;
+  outline: 1px solid green;
+  outline-offset: 15px;
+}
+
+.content {
+  display: inline-block;
+  height: 100%;
+  margin: 15px;
+  border: 1px solid blue;
+  outline: 1px solid blue;
+  outline-offset: 15px;
+  width: calc(100% - 235px);
+}
+
+.footer {
+  height: 5%;
+  position: relative;
+  top: 32px;
+  border: 1px solid black;
+}

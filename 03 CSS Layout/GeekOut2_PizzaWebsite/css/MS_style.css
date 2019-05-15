@@ -1,0 +1,78 @@
+html, body, body div, span, object, iframe, a, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-weight: normal;
+  vertical-align: baseline;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  background-color: #870080;
+}
+
+#top {
+  display: none;
+}
+
+.banner {
+  background-image: url("../img/pizza-banner-620x400.jpg");
+  height: 400px;
+  background-size: cover;
+  line-height: 750px;
+  color: magenta;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.banner h1 {
+  font-size: 152px;
+}
+
+.nav {
+  margin-top: 120px;
+  text-align: center;
+}
+
+.nav a {
+  text-decoration: none;
+  padding: 12px 10px;
+  background: #ff3c80;
+  color: #870080;
+  font-weight: bold;
+  font-size: 24px;
+  margin: 0 5px;
+  border-radius: 2px;
+}
+
+.stripe {
+  margin-top: 110px;
+}
+
+.stripe .stripe-title {
+  height: 18px;
+  background-color: #c30080;
+
+  text-align: center;
+}
+
+.stripe .stripe-title {
+  line-height: 2px;
+  color: #ff7880;
+  font-size: 36px;
+}
+
+.menu .menu-items {
+  font-size: 18px;
+  padding: 7px 5px;
+  background: #ff7880;
+  text-align: center;
+}
+
+.menu-items a {
+  margin: 0 12px;
+  color: white;
+}

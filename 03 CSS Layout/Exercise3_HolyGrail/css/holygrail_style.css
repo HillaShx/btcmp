@@ -1,0 +1,50 @@
+body {
+  height: 95vh;
+  width: 90vw;
+}
+
+.header {
+  height: 15%;
+  border: 1px solid red;
+}
+
+.container {
+  height: 80%;
+  width: 100%;
+  text-align: center;
+}
+
+.sidebar {
+  display: inline-block;
+  height: 100%;
+  width: 170px;
+  margin: 15px;
+  outline-offset: 15px;
+}
+
+.left-sidebar {
+  border: 1px solid green;
+  outline: 1px solid green;
+}
+
+.content {
+  display: inline-block;
+  height: 100%;
+  margin: 15px;
+  border: 1px solid blue;
+  outline: 1px solid blue;
+  outline-offset: 15px;
+  width: calc(100% - 438px);
+}
+
+.right-sidebar {
+  border: 1px solid pink;
+  outline: 1px solid pink;
+}
+
+.footer {
+  height: 5%;
+  position: relative;
+  top: 32px;
+  border: 1px solid black;
+}

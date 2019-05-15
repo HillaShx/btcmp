@@ -1,0 +1,28 @@
+.stripe {
+  border-width: 1px;
+  border-style: solid;
+}
+
+.content {
+  height: 880px;
+}
+
+.stripe.header {
+  border-color: blueviolet;
+  height: 14%;
+}
+
+.stripe.promo {
+  border-color: violet;
+  height: 48%;
+}
+
+.stripe.featured {
+  border-color: blue;
+  height: 33%;
+}
+
+.stripe.footer {
+  border-color: black;
+  height: 5%;
+}
