@@ -1,14 +1,18 @@
 * {
   padding: 0;
   margin: 0;
+  border: none;
 }
 
 html {
   margin: 0;
   padding: 0;
-  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
   font-size: 17px;
   font-weight: 400;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 h2 {
@@ -18,6 +22,7 @@ h2 {
 h3 {
   font-size: 24px;
   display: block;
+  font-weight: normal;
 }
 
 a {
@@ -31,6 +36,7 @@ a {
   background: rgba(45,45,45,0.98);
   position: fixed;
   text-align: center;
+  z-index: 2;
 }
 
 .navbar li {
@@ -48,6 +54,10 @@ span.logo {
   text-align: center;
   font-weight: 400;
   padding: 6px 0;
+  border-style: solid;
+  border-color: white;
+  border-width: 6px 0;
+  background-color: #fafafa;
 }
 
 .retail-tagline {
@@ -58,6 +68,7 @@ span.logo {
 .stripe.promo {
   padding: 51px 0 52.7px 0;
   font-size: 21px;
+  border-top-width: 0;
 }
 
 .smaller-cap {
@@ -73,14 +84,16 @@ span.logo {
 }
 
 .half-stripe {
-  width: 902.5px;
+  display: inline-block;
+  width: calc(50% - 18px);
   height: 580px;
-  border-color: white;
+  border-color: blue;
   border-style: solid;
   border-width: 6px;
   background-size: cover;
   background-position: center;
   text-align: center;
+  vertical-align: top;
 }
 
 .half-stripe.apple-tv {
@@ -91,4 +104,53 @@ span.logo {
 .half-stripe.tv-plus {
   border-right-width: 12px;
   background-image: url("../img/apple_tv_plus_tile_cover.jpg");
+}
+
+.half-stripe.apple-watch {
+  border-left-width: 12px;
+  background-color: #fafafa;
+  background-image: url("../img/apple_watch_series_4_spring.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.half-stripe.ipad-pro {
+  border-right-width: 12px;
+  
+}
+
+.half-stripe.ipad-pro div.btm-img {
+  position: relative;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.half-stripe.ipad-pro h4 {
+  margin-top: 42px;
+}
+
+.center-apple-tv-plus-img {
+  margin: 10.5px 0;
+}
+
+.half-stripe.apple-news {
+  background-image: url("../img/apple_news_plus_tile.jpg");
+  background-position: center;
+  background-size: cover;
+  border-left-width: 12px;
+
+}
+
+.half-stripe.apple-music {
+  background-image: url("../img/apple_music_tile.jpg");
+  background-size: cover;
+  background-position: center;
+  border-right-width: 12px;
+}
+
+.footer {
+  height: 410px;
+  background-color: turquoise;
 }
