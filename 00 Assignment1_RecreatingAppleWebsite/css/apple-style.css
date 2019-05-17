@@ -10,9 +10,6 @@ html {
   font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
   font-size: 17px;
   font-weight: 400;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
 }
 
 h2 {
@@ -30,8 +27,23 @@ a {
   color: #2eb0ed;
 }
 
+ul {
+  list-style-type: none;
+}
+
+.inline {
+  display: inline;
+}
+
+.hamburger-buns {
+  display: block;
+  border: 1px solid white;
+  margin: 5px;
+  width: 17px;
+}
+
 .navbar {
-  height: 48px;
+  height: 44px;
   width: 100%;
   background: rgba(45,45,45,0.98);
   position: fixed;
@@ -39,10 +51,35 @@ a {
   z-index: 2;
 }
 
-.navbar li {
-  text-decoration: none;
+img[src="./img/hamburger_menu.png"] {
+  display: none;
+}
+
+.navbar-items {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.navbar-items li {
   display: inline;
   color: #ffffff;
+  position: relative;
+  top: -17.5px;
+  margin: 0 3%;
+  font-size: 14px;
+}
+
+.navbar-items img {
+  margin: 0 3%;  
+}
+
+.navbar-items .left-item  {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.navbar-items .right-item {
+  margin-right: 0;
 }
 
 span.logo {
@@ -71,12 +108,24 @@ span.logo {
   border-top-width: 0;
 }
 
+.additional-info:hover {
+  text-decoration: underline;
+}
+
+.additional-info::after {
+  content: "▶";
+}
+
+.additional-info::before {
+  text-decoration: none;
+}
+
 .smaller-cap {
   font-size: 28px;
 }
 
 .stripe.tv-4k {
-  background-image: url("../img/apple_tv_4k_cover.jpg");
+  background-image: url("../img/apple_tv_4k_cover_large.jpg");
   background-size: cover;
   background-position: center;
   height: 580px;
@@ -87,7 +136,7 @@ span.logo {
   display: inline-block;
   width: calc(50% - 18px);
   height: 580px;
-  border-color: blue;
+  border-color: white;
   border-style: solid;
   border-width: 6px;
   background-size: cover;
@@ -98,18 +147,18 @@ span.logo {
 
 .half-stripe.apple-tv {
   border-left-width: 12px;
-  background-image: url("../img/apple_tv_cover.jpg");
+  background-image: url("../img/apple_tv_cover_large.jpg");
 }
 
 .half-stripe.tv-plus {
   border-right-width: 12px;
-  background-image: url("../img/apple_tv_plus_tile_cover.jpg");
+  background-image: url("../img/apple_tv_plus_tile_cover_large.jpg");
 }
 
 .half-stripe.apple-watch {
   border-left-width: 12px;
   background-color: #fafafa;
-  background-image: url("../img/apple_watch_series_4_spring.jpg");
+  background-image: url("../img/apple_watch_series_4_spring_large.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -136,7 +185,7 @@ span.logo {
 }
 
 .half-stripe.apple-news {
-  background-image: url("../img/apple_news_plus_tile.jpg");
+  background-image: url("../img/apple_news_plus_tile_large.jpg");
   background-position: center;
   background-size: cover;
   border-left-width: 12px;
@@ -144,13 +193,103 @@ span.logo {
 }
 
 .half-stripe.apple-music {
-  background-image: url("../img/apple_music_tile.jpg");
+  background-image: url("../img/apple_music_tile_large.jpg");
   background-size: cover;
   background-position: center;
   border-right-width: 12px;
 }
 
 .footer {
-  height: 410px;
-  background-color: turquoise;
+  background-color: #f2f2f2;
+  color: #333333;
+}
+
+
+.footer-text {
+  width: 980px;
+  max-width: 95%;
+  padding: 22px 0;
+  margin: auto;
+}
+
+.footer-term-notes {
+  border-bottom: 1px solid #d6d6d6;
+
+}
+
+.footer-links {
+  border-bottom: 1px solid #d6d6d6;
+  max-width: inherit;
+}
+
+.footer-links-col {
+  display: inline-block;
+  width: 20%;
+  vertical-align: top;
+}
+
+.footer-bottom-text ul {
+  display: inline;
+}
+
+.footer-bottom-text li {
+  display: inline;
+  border: 0px solid #d6d6d6;
+  border-right-width: 1px;
+}
+
+.footer-bottom-text li.last-link {
+  border-right-width: 0px;
+}
+
+.location-name {
+  color: #555555;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+@media only screen and (max-width: 1000px) {
+  .navbar-items {
+    width: 98vw;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .navbar li {
+    display: none;
+  }
+
+  img[src="./img/search_icon_navbar.svg"] {
+    display: none;
+  }
+
+  img[src="./img/hamburger_menu.png"] {
+    display: inline;
+    clip: rect(0,0,4px,0);
+    margin: 0;
+  }
+
+  .navbar-items .right-item {
+    margin-right: 18px;
+  }
+
+  .navbar {
+    overflow: hidden;
+  }
+
+  .navbar-items ul {
+    display: flex;
+    justify-content: space-between;
+  }
+
+}
+
+@media only screen and (max-width: 1068px) {
+
 }
