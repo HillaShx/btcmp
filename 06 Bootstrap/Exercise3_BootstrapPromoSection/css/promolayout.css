@@ -1,0 +1,17 @@
+.promo {
+  height: 400px;
+  background-color: aquamarine;
+}
+
+.nav-placeholder {
+  height: 56px;
+}
+
+img {
+  width: 100%;
+}
+
+.footer {
+  height: 150px;
+  background-color: pink;
+}

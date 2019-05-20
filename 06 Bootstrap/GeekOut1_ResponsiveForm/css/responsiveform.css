@@ -1,0 +1,39 @@
+h1 {
+  font-weight: normal;
+  color: #5fc0e6;
+}
+
+input {
+  margin-top: 24px;
+  
+}
+
+input::placeholder {
+  font-style: italic;  
+  color: #5fc0e6 !important;
+}
+
+.form-image {
+  width: 200px;
+}
+
+.container-fluid {
+  margin: 120px auto;
+}
+
+.form-control {
+  border-color: #5fc0e6;
+  border-width: 3px;
+}
+
+.btn {
+  margin: 20px;
+  border: none;
+  border-radius: 40%;
+  background-color: #5fc0e6;
+}
+
+small {
+  color: gray;
+  font-style: italic;
+}
