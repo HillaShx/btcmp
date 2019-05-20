@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  margin: 20px 0;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.column {
+  flex-direction: column;
+}
+
+div div {
+  height: 100px;
+  width: 100px;
+  background: blue;
+  margin: 5px;
+}

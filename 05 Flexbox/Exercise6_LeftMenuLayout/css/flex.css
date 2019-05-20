@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  margin: 20px 0;
+  border: 3px solid coral;
+  height: 400px;
+  width: 100%;
+}
+
+.section {
+  justify-content: center;
+  align-items: center;
+  display: inherit;
+}
+
+.content-left {
+  width: 400px;
+  flex-grow: 1;
+  justify-content: inherit;
+  align-items: flex-end;
+}
+
+.content-left p {
+  margin: 5px 10px;
+}
+
+.content-right {
+  width: auto;
+  flex-grow: 4;
+  display: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+}
+
+.section.left {
+  border-right-width: 3px;
+  border-right-color: coral;
+  border-right-style: solid;
+  align-items: flex-end;
+}
+
+.text {
+  margin: 0 10px;
+  flex-wrap: wrap;
+}

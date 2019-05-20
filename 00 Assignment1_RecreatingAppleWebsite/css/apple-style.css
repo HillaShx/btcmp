@@ -14,17 +14,23 @@ html {
 
 h2 {
   font-size: 32px;
+  margin-bottom: 0.3em;
 }
 
 h3 {
   font-size: 24px;
+  margin-bottom: 0.7em;
   display: block;
   font-weight: normal;
 }
 
 a {
   text-decoration: none;
-  color: #2eb0ed;
+  color: #0070C9;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 ul {
@@ -43,6 +49,7 @@ ul {
 }
 
 .navbar {
+  top: 0;
   height: 44px;
   width: 100%;
   background: rgba(45,45,45,0.98);
@@ -56,7 +63,7 @@ img[src="./img/hamburger_menu.png"] {
 }
 
 .navbar-items {
-  width: 1000px;
+  width: 1024px;
   margin: 0 auto;
 }
 
@@ -89,8 +96,8 @@ span.logo {
 
 .stripe {
   text-align: center;
-  font-weight: 400;
-  padding: 6px 0;
+  font-weight: auto;
+  padding-top: 36px;
   border-style: solid;
   border-color: white;
   border-width: 6px 0;
@@ -103,9 +110,16 @@ span.logo {
 }
 
 .stripe.promo {
-  padding: 51px 0 52.7px 0;
+  padding: 95px 0 52.7px 0;
+  margin-top: 65px;
   font-size: 21px;
   border-top-width: 0;
+}
+
+.additional-info {
+  font-size: 21px;
+  padding: 0 12px;
+  margin-bottom: 16px;
 }
 
 .additional-info:hover {
@@ -122,6 +136,10 @@ span.logo {
 
 .smaller-cap {
   font-size: 28px;
+}
+
+.dark-bg {
+  color: white;
 }
 
 .stripe.tv-4k {
@@ -145,6 +163,10 @@ span.logo {
   vertical-align: top;
 }
 
+.half-stripe.dark-bg, .half-stripe.dark-bg a {
+  color: white;
+}
+
 .half-stripe.apple-tv {
   border-left-width: 12px;
   background-image: url("../img/apple_tv_cover_large.jpg");
@@ -153,6 +175,11 @@ span.logo {
 .half-stripe.tv-plus {
   border-right-width: 12px;
   background-image: url("../img/apple_tv_plus_tile_cover_large.jpg");
+}
+
+.tv-plus h5 {
+  width: 250px;
+  margin: auto;
 }
 
 .half-stripe.apple-watch {
@@ -201,11 +228,12 @@ span.logo {
 
 .footer {
   background-color: #f2f2f2;
-  color: #333333;
+  color: #888888;
 }
 
 
 .footer-text {
+  position: relative;
   width: 980px;
   max-width: 95%;
   padding: 22px 0;
@@ -217,44 +245,89 @@ span.logo {
 
 }
 
+.term-notes-link {
+  font-style: italic;
+  color: #333333;
+}
+
 .footer-links {
+  padding: 0 0 6px 0;
   border-bottom: 1px solid #d6d6d6;
   max-width: inherit;
+  font-size: 13px;
+  color: #333333
+}
+
+.footer-links-title {
+  padding: 22px 0 2px 0;
 }
 
 .footer-links-col {
   display: inline-block;
   width: 20%;
   vertical-align: top;
+  margin-bottom: 20px;
+}
+
+.footer-links-col li {
+  padding: 2px 0;
+  color: #333333;
+}
+
+.footer-links-col li a {
+  color: #333333;
+}
+
+.footer-links-col a:hover {
+  text-decoration: underline;
+}
+
+.footer-links p {
+  color: #888888;
+}
+
+.footer-links a {
+  color: #0070C9;
+}
+
+.footer-bottom-text {
+  font-size: 12px;
+  padding-top: 10px;
 }
 
 .footer-bottom-text ul {
   display: inline;
+  color: #888;
+  margin-left: 24px;
+}
+
+
+.footer-bottom-text a {
+  color: #333333;
 }
 
 .footer-bottom-text li {
   display: inline;
   border: 0px solid #d6d6d6;
   border-right-width: 1px;
+  padding: 0 5px;
 }
 
 .footer-bottom-text li.last-link {
   border-right-width: 0px;
 }
 
+.location {
+  right: 0px;
+  position: absolute;  
+}
+
 .location-name {
-  color: #555555;
+  color: #333333;
 }
 
-.bold {
-  font-weight: bold;
-}
 
-.italic {
-  font-style: italic;
-}
-
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1024px) {
   .navbar-items {
     width: 98vw;
   }

@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  margin: 20px 0;
+  border: 1px solid gray;
+  height: 200px;
+}
+
+.vertical-center {
+  align-items: center;
+}
+
+.stretched {
+  align-items: stretch;
+}
+
+div.vertical-center div {
+  height: 100px;
+  width: 100px;
+  background: blue;
+  margin: 5px;
+}
+
+div.stretched div {
+  width: 100px;
+  background: blue;
+  margin: 5px;
+}

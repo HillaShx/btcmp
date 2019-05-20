@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  margin: 20px 0;
+  border: 1px solid gray;
+  height: 400px;
+  width: 100%;
+}
+
+.section {
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  display: inherit;
+}
+
+.content {
+  width: 400px;
+  display: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+}
+
+.circle {
+  border-radius: 50px;
+  height: 100px;
+  width: 100px;
+  background: blue;
+  margin: 5px;
+  justify-content: inherit;
+}
+
+.section.left {
+  border-right-width: 1px;
+  border-right-color: gray;
+  border-right-style: solid;
+}
+
+.text {
+  flex-wrap: wrap;
+}
