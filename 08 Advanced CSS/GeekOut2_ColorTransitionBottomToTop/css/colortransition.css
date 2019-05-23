@@ -1,0 +1,32 @@
+div {
+  width: 100px;
+  height: 100px;
+}
+
+.below {
+  background: #87cefa;
+  position: relative;
+}
+
+.below:hover .over {
+  height: 100%;
+}
+
+.over {
+  height: 0%;
+  background: #4682b4;
+  position: absolute;
+  bottom: 0;
+  transition: all 2s linear;
+}
+
+.bordered-block {
+  background: #c71585;
+}
+
+.bordered-block:hover {
+  height: 90px;
+  width: 90px;
+  border: 5px solid #f7da00;
+  transition: all 1s linear;
+}

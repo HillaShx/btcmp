@@ -1,0 +1,16 @@
+.text {
+  height: 50px;
+  position: relative;
+}
+
+p {
+  position: absolute;
+  top: 0;
+  font-size: 24px;
+  color: purple;
+}
+
+p:hover {
+  font-size: 32px;
+  transition: all 1s linear 0.2s;
+}

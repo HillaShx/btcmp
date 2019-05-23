@@ -1,0 +1,16 @@
+.box {
+  height: 200px;
+  width: 200px;
+  background-color: green;
+}
+
+.box p {
+  padding-top: 20px;
+  margin-left: 30%;
+  color: aquamarine;
+}
+
+.box:hover {
+  width:300px;
+  transition: width 2s ease-in 0.5s;
+}

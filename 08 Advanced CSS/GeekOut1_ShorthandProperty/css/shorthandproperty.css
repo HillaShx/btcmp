@@ -1,0 +1,12 @@
+.shorthand {
+  background-image: linear-gradient(red,orange,yellow,green,blue,purple);
+  width: 400px;
+  height:200px;
+  position: relative;
+  left: 0;
+  transition: all 2s ease-in-out 0.5s;
+}
+
+.shorthand:hover {
+  left: 200px;
+}
