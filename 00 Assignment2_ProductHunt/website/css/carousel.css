@@ -1,0 +1,56 @@
+
+.carousel.slide h1 {
+  font-size: 1.2em;
+}
+
+.slide-content img {
+  display: inline-block;
+}
+
+.slide-content span {
+  font-size: 0.7em;
+  display: inline-block;
+  line-height: 1.6;
+}
+
+.review-author {
+  float: right;
+  font-style: italic;
+}
+
+.review-author::before {
+  content: "-";
+  margin-right: 10px;
+}
+
+.slide-text {
+
+}
+
+.carousel.slide {
+  font-size: 4vw;
+  z-index: 0;
+  margin-top: 10vh;
+  
+}
+
+.slide {
+  height: 80%;
+}
+
+.carousel-inner {
+  /* background-image: url(http://tipsonubuntu.com/wp-content/uploads/2019/03/Disco-Dingo_WP_4096x2304.jpg); */
+  
+  height: 100%;
+}
+
+.slide-text {
+  margin: 0 45px;
+  margin-top: 40px;
+  text-align: left;
+}
+
+.carousel-control-next, .carousel-control-prev {
+  width: 4%;
+  /* padding-right: 10%; */
+}
