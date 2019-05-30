@@ -1,0 +1,38 @@
+body {
+  text-align: center;
+}
+
+#info-confirmation {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -200px;
+  margin-left: -200px;
+  width: 480px;
+  padding: 40px 120px;
+  background-color: rgba(140,0,170,0.6);
+  text-align: center;
+  border: 2px solid gray;
+  border-radius: 4px;
+}
+
+h2 {
+  color: red;
+  font-size: 28px;
+}
+
+#successful-submission {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -200px;
+  margin-left: -200px;
+  width: 400px;
+  padding: 40px 120px;
+  background-color: rgba(140,0,170,0.6);
+  text-align: center;
+  border: 2px solid gray;
+  border-radius: 4px;
+}

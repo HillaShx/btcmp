@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Form</title>
+  <link rel="stylesheet" href="./css/form.css">
+</head>
+<body>
+  <form action="">
+    <input id="data-name" class="data-for-confirmation" type="text" placeholder="Name">
+    <input id="data-age" class="data-for-confirmation" type="number" placeholder="Age">
+    <input id="data-email" class="data-for-confirmation" type="email" placeholder="Email">
+    <button type="button" onclick="isValid();">submit</button>
+  </form>
+  <div id="info-confirmation">
+    <h2>Confirm your information:</h2>
+    <p>
+      Your name is <span id="display-name"></span>, you are <span id="display-age"></span> years old and your e-mail address is <span id="display-email"></span>.
+    </p>
+    <button onclick="confirm();">confirm</button><button onclick="editInformation();">edit information</button>
+  </div>
+  <div id="successful-submission">
+    <p>
+      Congratulations! You have successfuly submitted your information!
+    </p>
+  </div>
+  <script src="./js/form.js"></script>
+</body>
+</html>

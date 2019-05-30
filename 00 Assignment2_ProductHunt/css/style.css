@@ -1,0 +1,241 @@
+body {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 4vw;
+    background-color: #020202;
+}
+
+.container-fluid {
+    margin-top: 0;
+    background-image: url('../images/bgwide.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 1080px;
+}
+
+nav.navbar {
+    background: linear-gradient(#5b584f, #3f3e39);
+    width: 100%;
+    color: white;
+    position: fixed;
+    z-index: 1;
+}
+
+.logo {
+    width: auto;
+    height: 1em;
+    transform: translateY(-7%);
+}
+
+nav.navbar span.tagline-md {
+    font-size: 24px;
+}
+
+nav.navbar span.tagline-sm {
+    font-size: 18px;
+    display: none;
+}
+
+.btn-success {
+    background: #3d8422;
+}
+
+.row.slides{
+    height: 680px;
+}
+
+.slide-content {
+    margin: 2vh 68px;
+}
+
+.slide-content img {
+    width: 100px;
+    float: left;
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 36px;
+}
+  
+.slide-content p {
+    text-align: justify;
+    font-size: 0.7em;
+    line-height: 1.6;
+}
+  
+.review-author {
+    float: right;
+    font-style: italic;
+    bottom: 12px;
+}
+  
+.review-author::before {
+    content: "-";
+    margin-right: 10px;
+}
+  
+.carousel.slide {
+    z-index: 0;
+    margin-top: 10vh;
+}
+  
+.slide {
+    height: 80%;
+}
+  
+.carousel-inner {
+    height: 100%;
+}
+  
+.slide-content {
+    margin: 0 45px;
+    margin-top: 40px;
+    text-align: left;
+}
+  
+.carousel-control-next, .carousel-control-prev {
+    width: 4%;
+}
+
+.row.features {
+    height: 400px;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.row.features .feature-col {
+    text-align: center;
+}
+
+.feature-img {
+    height: 130px;
+    margin: 6px 12px;
+    margin-top: 105px;
+}
+
+.left-feature-img {
+    margin-left: -50px;
+}
+
+.left-feature-txt {
+    margin-left: -70px;    
+}
+
+.row.media {
+    height: 400px;
+}
+
+.feature-title {
+    margin-bottom: -50px;
+    color: #f2f2f2;
+    text-shadow: 2px 2px #5b584f;
+}
+
+.row.partners {
+    text-align: center;
+    height: auto;
+    background-image: url("../images/ubuntu-stripe-bg.png");
+    background-size: cover;
+}
+
+.row.partners h2 {
+    margin-top: 10px;
+}
+
+.row.partners .row {
+    width: 100%;
+    margin: auto;
+    line-height: 3em;
+}
+
+.row.partners .row img {
+    width: 170px;
+    height: auto;
+    margin: 10px 15px;
+}
+
+.row.footer {
+    height: auto;
+    background-color: #020202;
+    text-align: center;
+}
+
+img.media-icon {
+    width: 40px;
+    margin: 3px 0;
+}
+
+
+
+@media only screen and (max-width: 943px) {
+    nav.navbar span.tagline-md {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 785px) {
+    nav.navbar span.tagline-md {
+        display: none;
+    }
+    nav.navbar span.tagline-sm {
+        display: inline;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    
+    .carousel-inner {
+        font-size: 1.7em;
+    }
+
+    .row.features {
+        width: 100%;
+    }
+
+    .feature-img {
+        margin-top: 10px;
+    }
+
+    .left-feature-img {
+        margin-left: 44px;
+    }
+    .left-feature-txt {
+        margin-left: 12px;
+    }
+
+}
+
+@media only screen and (max-width: 636px) {
+    nav.navbar span.tagline-sm {
+        display: none;
+    }
+
+}
+
+@media only screen and (max-width: 575px) {
+    
+    .brand-name {
+        display: none;
+    }
+
+    .navbar-brand .logo {
+        height: 1.8em;
+        transform: none;
+    }
+
+    .slide-content {
+        font-size: 1em;
+        margin: 4vh 32px;
+    }
+
+
+    .feature-img {
+        height: 70px;
+    }
+}
+
+@media only screen and (max-width: 498px) {
+    .slide-content {
+        font-size: 1.1em;
+        margin: 4vh 32px;
+    }
+}
