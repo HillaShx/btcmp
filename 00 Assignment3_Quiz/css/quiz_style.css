@@ -1,33 +1,38 @@
 body {
   text-align: center;
+  background-color: #d6d1c8;
+}
+
+.container {
+  margin: 0;
+  padding: 0;
 }
 
 .header {
   background-image: url(../img/quiz_banner.png);
-  height: 400px;
-  width: 100.8%;
+  height: 380px;
+  /* width: 100.8%; */
   background-size: cover;
   background-position: center;
 }
 
 .header-btm-stripe {
   height: 90px;
-  background-color: green;
+  background-color: #138f25;
 }
 
-.header h1 {
-  line-height: 250px;
+.quiz-title {
+  line-height: 210px;
   color: #f3f3f3;
 }
 
 .char-avatar-container {
   height: 120px;
-  widht: 120px;
   border-radius: 50%;
   display: inline;
   float: left;
   margin: 20px;
-  background-color: rgb(0, 204, 0);
+  background-color: #138f25;
 }
 
 .char-avatar {
@@ -36,30 +41,107 @@ body {
   border-radius: 50%;
   display: inline;
   float: left;
+  top: 0;
+  transition: all 0.3s ease;
 }
 
-.left-ava.char-avatar:hover {
+.char-avatar:hover {
   top: 5px;
-  left: 5px;
 }
 
 .right-ava {
   float: right;
 }
 
-.right-ava.char-avatar:hover {
-  top: 5px;
-  right: 5px;
+.slideshow {
+  position: relative;
+  height: 415px;  
 }
 
-.carousel-item {
+.slide {
   background-color: #d6d1c8;
-  height: 400px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  opacity: 0;
+  z-index: 1;
+}
+
+.active-slide {
+  opacity: 1;
+  z-index: 2;
+}
+
+.row.answers {
+  height: 50%;
+}
+
+.answer {
+  padding: 0;
+  margin: 10px 0;
+  font-size: 24px;
+  font-weight: bold;
+  border: 1px solid #d6d1c8;
+
+}
+
+.answer:hover {
+  background-color: #138f25;
+  color: #d6d1c8;
+  border: 1px solid #138f25;
+  cursor: pointer;
+}
+
+.answer.active-answer {
+  border: 1px solid #138f25;
+  background-color: #658f6b;
 }
 
 .navigation {
-  /* margin-top: 140px; */
-  /* width: 300px; */
-  background-color: grey;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  bottom: 0;
+  background-color: #138f25;
+  font-size: 24px;
 }
 
+.btn {
+  background-color: #c5c5c5;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.lets-go {
+  margin-top: 170px;
+  font-size: 42px;
+  border-color: grey;
+  border: 1px;
+}
+
+.lets-go:hover {
+  margin-top: 169px;
+  background-color: #d3d3d3;
+  border-style: solid;
+}
+
+.nav-btn {
+  margin: 0 12px;
+  width: 160px;
+  background-color: #c5c5c5;
+  border-color: #c5c5c5;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.nav-btn:hover {
+  background-color: #d3d3d3;
+  border-color: grey;
+}
+
+.hide {
+  visibility: hidden;
+}
