@@ -11,17 +11,17 @@
 <body>
   <div class="container-fluid">
     <div class="row header no-gutters">
-      <div class="col-md-6"><div class="char-avatar-container"><img class="char-avatar left-ava" src="./img/avatars/chidi.jpg" alt="Chidi Anagonye"></div></div>
+      <div class="col-md-6"><div class="char-avatar-container"><img class="char-avatar" src="./img/avatars/chidi.jpg" alt="Chidi Anagonye"></div></div>
       <div class="col-md-6"><div class="char-avatar-container right-ava"><img class="char-avatar right-ava" src="./img/avatars/eleanor.jpg" alt="Eleanor Shellstrop"></div></div>
-      <div class="col-md-6"><div class="char-avatar-container"><img class="char-avatar left-ava" src="./img/avatars/tahani.jpg" alt="Tahani Al-Jameel"></div></div>
+      <div class="col-md-6"><div class="char-avatar-container"><img class="char-avatar" src="./img/avatars/tahani.jpg" alt="Tahani Al-Jameel"></div></div>
       <div class="col-md-6"><div class="char-avatar-container right-ava"><img class="char-avatar right-ava" src="./img/avatars/jason.jpg" alt="Jason Mandoza"></div></div>
-      <div class="col-md-9 offset-md-1">
-        <h1 class="quiz-title" id="quiz-question">Which Character From "The Good Place" Are You?</h1>
+      <div class="col-md-9 offset-md-2">
+        <h1 class="quiz-title" id="quiz-question">Which Character From "The Good Place" Are You? <span id="which-are-you"></span></h1>
       </div>
     </div>
     <div class="header-btm-stripe row no-gutters"></div>
     <div id="slideshow" class="slideshow row no-gutters">
-        <div class="opening-slide slide active-slide">
+        <div id="opening-slide" class="slide active-slide">
           <div class="lets-go btn" onclick="turnToQuestions();">Hop on the Trans Eternal Railway!</div>
         </div>
         <div id="questions-slide" class="slide">
@@ -34,51 +34,27 @@
             <div id="answer-3" class="col-md-6 answer" value="3"></div>
           </div>
         </div>
-        <!-- <div class="slide">
-            <div class="answers row no-gutters">
-                <div class="col-md-6 answer">slide 4</div>
-                <div class="col-md-6 answer"></div>
-              </div>
-              <div class="answers row no-gutters">
-                <div class="col-md-6 answer"></div>
-                <div class="col-md-6 answer"></div>
-              </div>
-        </div>
         <div class="slide">
-            <div class="answers row no-gutters">
-                <div class="col-md-6 answer">slide 3</div>
-                <div class="col-md-6 answer"></div>
-              </div>
-              <div class="answers row no-gutters">
-                <div class="col-md-6 answer"></div>
-                <div class="col-md-6 answer"></div>
-              </div>
         </div>
-        <div class="slide">
-            <div class="answers row no-gutters">
-                <div class="col-md-6 answer">slide 2</div>
-                <div class="col-md-6 answer"></div>
-              </div>
-              <div class="answers row no-gutters">
-                <div class="col-md-6 answer"></div>
-                <div class="col-md-6 answer"></div>
-              </div>
+        <div id="result-slide" class="slide">
+          <div id="result-header" class="row no-gutters">
+            <div class="col-md-4"><img id="result-ava" class="char-avatar right-ava" src="" alt=""></div>
+            <div class="col-md-8"><h3 id="result-anouncement">You are:</h3></div>
+          </div>
+          <div class="row no-gutters">
+            <div class="col-md-4"></div>
+            <div class="col-md-8"><p id="result-description"></p></div>
+          </div>
+          <div class="row no-gutters">
+            <div class="col-md-12"><div id="again-btn" class="btn" onclick="turnToQuestions();">Let's go again!</div></div>
+          </div>
         </div>
-        <div class="slide">
-            <div class="answers row no-gutters">
-                <div class="col-md-6 answer">slide 1</div>
-                <div class="col-md-6 answer"></div>
-              </div>
-              <div class="answers row no-gutters">
-                <div class="col-md-6 answer"></div>
-                <div class="col-md-6 answer"></div>
-              </div>
-        </div> -->
       </div>
-        <div class="row no-gutters navigation">
-          <div id="prev-question" class="btn nav-btn hide">go back</div>
-          <div id="next-question" class="btn nav-btn hide" onclick="nextSlide();">keep going</div>
-        </div>
+          <div class="row no-gutters navigation">
+            <div id="prev-question" class="btn nav-btn hide" onclick="prevSlide();">go back</div>
+            <div id="next-question" class="btn nav-btn hide" onclick="nextSlide();">keep going</div>
+          </div>
+      <div id="no-chosen-answer-alert-screen"><div id="no-chosen-answer-alert-box">You have to choose an answer before you move on!<br/><div class="btn" onclick="hideAlert();">got it!</div></div></div></div>
   </div>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="./lib/js/bootstrap.min.js"></script>

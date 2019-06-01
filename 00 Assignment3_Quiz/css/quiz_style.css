@@ -11,9 +11,25 @@ body {
 .header {
   background-image: url(../img/quiz_banner.png);
   height: 380px;
-  /* width: 100.8%; */
   background-size: cover;
   background-position: center;
+  position: realtive;
+}
+
+.char-name-header {
+  position: absolute;
+  display: inline-block;
+  top: 90px;
+  left: 30px;
+  font-size: 30px;
+  border: 2px solid red;
+}
+
+.right-char-name {
+  left: 0;
+  right: 90px;
+  text-align: right;
+  margin-right: -20px;
 }
 
 .header-btm-stripe {
@@ -24,6 +40,11 @@ body {
 .quiz-title {
   line-height: 210px;
   color: #f3f3f3;
+  text-align: left;
+}
+
+#which-are-you {
+  font-size: 28px;
 }
 
 .char-avatar-container {
@@ -55,7 +76,7 @@ body {
 
 .slideshow {
   position: relative;
-  height: 415px;  
+  height: 400px;  
 }
 
 .slide {
@@ -130,11 +151,13 @@ body {
 
 .nav-btn {
   margin: 0 12px;
+  padding: 4px 8px;
   width: 160px;
   background-color: #c5c5c5;
   border-color: #c5c5c5;
   border-width: 1px;
   border-style: solid;
+  font-size: 28px;
 }
 
 .nav-btn:hover {
@@ -144,4 +167,54 @@ body {
 
 .hide {
   visibility: hidden;
+}
+
+#no-chosen-answer-alert-screen {
+  background-color: rgba(40,40,40,0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  visibility: hidden;
+  z-index: -1;
+  }
+
+#no-chosen-answer-alert-box {
+  background-color: #d3d3d3;
+  font-size: 42px;
+  width: 650px;
+  margin: auto;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+#no-chosen-answer-alert-box .btn {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+#result-header {
+  margin-top: 20px;
+}
+
+#result-ava:hover {
+  left: 0;
+  top: 0;
+}
+
+#result-anouncement {
+  float: left;
+  line-height: 210px;
+}
+
+#result-description {
+  margin-top: -70px;
+  float: left;
+  text-align: left;
+  font-size: 24px;
+}
+
+#again-btn {
+  font-size: 24px;
 }
