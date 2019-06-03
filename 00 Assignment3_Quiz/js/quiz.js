@@ -211,8 +211,9 @@ function turnToResult() {
     }
   }
   document.getElementById("result-ava").src = resultChar.img;
-  document.getElementById("result-anouncement").innerText += " " + resultChar.name;
+  document.getElementById("result-anouncement").innerText = "You are: " + resultChar.name;
   document.getElementById("result-description").innerText = resultChar.description
+  resetPoints();
 }
 
 function revealNavigation() {
@@ -245,10 +246,9 @@ var charNum = 0;
 for (var i=0; i<charactersDOM.length; i++) {
   charNum=i;
   charactersDOM[i].addEventListener("mouseover", function() {
-    // var current = document.getElementById("which-are-you");
-  
-    document.getElementById("which-are-you").innerText = this.alt + "?";
-    // this.innerText = charactersArray[charNum].name;
+    if (questionNumber === 0) {
+      document.getElementById("which-are-you").innerText = this.alt + "?";
+    }
   });
 }
 
@@ -261,3 +261,10 @@ function hideAlert() {
   document.getElementById("no-chosen-answer-alert-screen").style.visibility = "hidden";
   document.getElementById("no-chosen-answer-alert-screen").style.zIndex = "-1";
 }
+
+ function resetPoints() {
+   var allChars = GoodPlaceQuiz.results;
+   for (var i=0; i<allChars.length; i++) {
+     allChars[i].points = 0;
+   }
+ }
