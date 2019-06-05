@@ -1,0 +1,11 @@
+body {
+  text-align: center;
+}
+
+.thank-you-msg {
+  display: inline-block;
+  margin: auto;
+  margin-top: 300px;
+  color: green;
+  font-size: 48px;
+}

@@ -1,0 +1,10 @@
+.hide {
+  visibility: hidden;
+}
+
+.butn {
+  background-color: #3b7cca;
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: #e7e7e7;
+}
