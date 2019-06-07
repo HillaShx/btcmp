@@ -38,10 +38,10 @@ var paint95 = {
     var colorPalette = $("<div/>");
     colorPalette.attr("id", "color-palette");
     for (var i=0; i<paint95.colorPalette.length; i++) {
-      var currColor = $("<div/>");
-      currColor.addClass("color-in-palette");
-      currColor.css("background-color", paint95.colorPalette[i]);
-      currColor.appendTo(colorPalette);
+      var colorItem = $("<div/>");
+      colorItem.addClass("color-in-palette");
+      colorItem.css("background-color", paint95.colorPalette[i]);
+      colorItem.appendTo(colorPalette);
     }
     colorPalette.appendTo("body")
     var currColor = $("<div/>");
@@ -63,8 +63,9 @@ var paint95 = {
       dot.css("top", dotY + "px");
       dot.css("left", dotX + "px");
       dot.appendTo($("#canvas"));
-    }  
+    }
   }
+  
 }
 
 paint95.initPaint();
@@ -90,4 +91,9 @@ $(document).on("mouseup", function() {
   isClicked = false;
 });
 
-// next: color picker
+
+$(".color-in-palette").click(function(e) {
+  var targetColor = $(e.target).css("background-color");
+  paint95.brush.colorOnBrush = targetColor;
+  $("#brush").css("background-color", targetColor);
+})
