@@ -104,6 +104,22 @@ body {
   background-size: cover;
 }
 
+#increase-brush {
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 38px;
+  text-align: center;
+  cursor: context-menu;
+}
+
+#decrease-brush {
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 38px;
+  text-align: center;
+  cursor: context-menu;
+}
+
 #clear-canvas {
   padding-top: 10px;
   width: 87.5px;

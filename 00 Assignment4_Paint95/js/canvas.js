@@ -83,6 +83,16 @@ var paint95 = {
     brushBtn.addClass("operation-btn");
     brushBtn.attr("id", "brush-btn");
     brushBtn.appendTo(colorPalette);
+    var increaseBrushSize = $("<div/>");
+    increaseBrushSize.addClass("operation-btn");
+    increaseBrushSize.attr("id", "increase-brush");
+    increaseBrushSize.text("+");
+    increaseBrushSize.appendTo(colorPalette)
+    var decreaseBrushSize = $("<div/>");
+    decreaseBrushSize.addClass("operation-btn");
+    decreaseBrushSize.attr("id", "decrease-brush");
+    decreaseBrushSize.text("-");
+    decreaseBrushSize.appendTo(colorPalette)
     var clearBtn = $("<div/>");
     clearBtn.addClass("operation-btn");
     clearBtn.attr("id", "clear-canvas");
@@ -134,8 +144,8 @@ var paint95 = {
       var dot = $("<div/>");
       dot.attr("class", "dot");
       dot.css("background-color", paint95.canvas.backgroundColor);
-      dot.css("top", parseInt(dotY)-10 + "px");
-      dot.css("left", parseInt(dotX)-10 + "px");
+      dot.css("top", dotY + "px");
+      dot.css("left", dotX + "px");
       dot.appendTo($("#canvas"));
       dot.css("height", paint95.brush.width+10+"px");
       dot.css("width", paint95.brush.width+10+"px");
@@ -222,4 +232,12 @@ $(".clear-options").click(function(e) {
   if ($(e.target).val() === "yes") {
     $("#canvas").empty();
   }
+});
+
+$("#increase-brush").click(function() {
+  paint95.brush.width += 2;
+})
+
+$("#decrease-brush").click(function() {
+  paint95.brush.width -= 2;
 })
