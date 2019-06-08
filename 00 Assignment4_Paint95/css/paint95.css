@@ -18,7 +18,7 @@ body {
   color: #f6fdfe;
 }
 
-#modal {
+.modal {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -37,6 +37,24 @@ body {
   border-radius: 7px;
 }
 
+#warning-modal {
+  display: none;
+}
+
+#warning-message {
+  padding: 25px 45px;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  border-radius: 7px;
+}
+
+.clear-options {
+  margin-left: 12px;
+}
+
 .canvas-input {
   display: block;
 }
@@ -49,7 +67,6 @@ body {
 }
 
 #color-palette {
-  height: 300px;
   width: 100px;
   background-color: #bfbfbf;
 }
@@ -68,6 +85,32 @@ body {
   border: 1px white solid;
 }
 
+.operation-btn {
+  height: 40px;
+  width: 40px;
+  margin: 2.5px 4px;
+  display: inline-block;
+  border: 1px solid lightgrey;
+  font-size: 0;
+}
+
+#erase-btn {
+  background-image: url("../img/eraser-icon.png");
+  background-size: cover;
+}
+
+#brush-btn {
+  background-image: url("../img/brush-icon.png");
+  background-size: cover;
+}
+
+#clear-canvas {
+  padding-top: 10px;
+  width: 87.5px;
+  font-size: 26px;
+  cursor: context-menu;
+}
+
 .color-in-palette {
   display: inline-block;
   font-size: 0;
@@ -81,7 +124,5 @@ body {
   position: absolute;
   padding: 0;
   margin: 0;
-  height: 3px;
-  width: 3px;
-  background-color: aquamarine;
+  border-radius: 50%;
 }

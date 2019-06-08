@@ -17,8 +17,11 @@ var paint95 = {
     "#98d2eb"
   ],
   brush: {
+    brushOn: true,
     isDrawing: false,
-    width: 1,
+    eraserOn: false,
+    isErasing: false,
+    width: 3,
   },
   initPaint: function() {
     var paintHeader = $("<div/>");
@@ -33,6 +36,24 @@ var paint95 = {
     canvas.appendTo("body");
     colorOnBrush = paint95.initPalette();
     paint95.getCanvasInfo();
+    var clearWarning = $("<div/>");
+    clearWarning.addClass("modal");
+    clearWarning.attr("id","warning-modal")
+    clearWarning.appendTo("body");
+    var clearMsg = $("<div/>");
+    clearMsg.attr("id", "warning-message");
+    clearMsg.text("Are you sure you want to clear your canvas?");
+    clearMsg.appendTo(clearWarning);
+    var confirmClear = $("<button/>");
+    confirmClear.addClass("clear-options");
+    confirmClear.text("YES");
+    confirmClear.attr("value", "yes");
+    var denyClear = $("<button/>");
+    denyClear.addClass("clear-options");
+    denyClear.text("NO");
+    denyClear.attr("value", "no");
+    confirmClear.appendTo(clearMsg);
+    denyClear.appendTo(clearMsg);
   },
   initPalette: function() {
     var colorPalette = $("<div/>");
@@ -54,25 +75,29 @@ var paint95 = {
     colorIndicator.text("brush color:")
     colorIndicator.appendTo(colorPalette);
     currColor.appendTo(colorPalette);
-  },
-  drawing: function(dotX,dotY) {
-    if (paint95.brush.isDrawing) {
-      var dot = $("<div/>");
-      dot.attr("class", "dot");
-      dot.css("background-color", paint95.brush.colorOnBrush);
-      dot.css("top", dotY + "px");
-      dot.css("left", dotX + "px");
-      dot.appendTo($("#canvas"));
-    }
+    var eraserBtn = $("<div/>");
+    eraserBtn.addClass("operation-btn");
+    eraserBtn.attr("id", "erase-btn");
+    eraserBtn.appendTo(colorPalette);
+    var brushBtn = $("<div/>");
+    brushBtn.addClass("operation-btn");
+    brushBtn.attr("id", "brush-btn");
+    brushBtn.appendTo(colorPalette);
+    var clearBtn = $("<div/>");
+    clearBtn.addClass("operation-btn");
+    clearBtn.attr("id", "clear-canvas");
+    clearBtn.text("CLEAR");
+    clearBtn.appendTo(colorPalette);
   },
   getCanvasInfo: function() {
-    var modal = $("<div/>");
-    modal.attr("id", "modal");
-    modal.appendTo("body");
+    var welcomeModal = $("<div/>");
+    welcomeModal.addClass("modal");
+    welcomeModal.attr("id","welcome-modal");
+    welcomeModal.appendTo("body");
     var welcomeMsg = $("<div/>");
     welcomeMsg.attr("id", "welcome-message");
     welcomeMsg.text("Welcome to Paint! Create your canvas:");
-    welcomeMsg.appendTo($("#modal"));
+    welcomeMsg.appendTo(welcomeModal);
     var paintingName = $("<input/>");
     paintingName.addClass("canvas-input");
     paintingName.attr("id", "painting-name-input");
@@ -91,47 +116,110 @@ var paint95 = {
     var startButton = $("<button/>");
     startButton.attr("id", "start-button");
     startButton.text("Let's GO!").appendTo("#welcome-message");
-  }
+  },
+  drawing: function(dotX,dotY) {
+    if (paint95.brush.brushOn) {
+      var dot = $("<div/>");
+      dot.attr("class", "dot");
+      dot.css("background-color", paint95.brush.colorOnBrush);
+      dot.css("top", dotY + "px");
+      dot.css("left", dotX + "px");
+      dot.appendTo($("#canvas"));
+      dot.css("height", paint95.brush.width);
+      dot.css("width", paint95.brush.width);
+    }
+  },
+  erasing: function(dotX, dotY) {
+    if (paint95.brush.eraserOn) {
+      var dot = $("<div/>");
+      dot.attr("class", "dot");
+      dot.css("background-color", paint95.canvas.backgroundColor);
+      dot.css("top", parseInt(dotY)-10 + "px");
+      dot.css("left", parseInt(dotX)-10 + "px");
+      dot.appendTo($("#canvas"));
+      dot.css("height", paint95.brush.width+10+"px");
+      dot.css("width", paint95.brush.width+10+"px");
+      }
+    }
 }
 
 paint95.initPaint();
 
 $("#start-button").click(function() {
-  if ($("#height-input").val() !== "") {
+  if ($("#height-input").val() !== "" && !isNaN($("#width-input").val())) {
     paint95.canvas.height = $("#height-input").val();
   }
-  if ($("#width-input").val() !== "") {
+  if ($("#width-input").val() !== "" && !isNaN($("#width-input").val())) {
     paint95.canvas.width = $("#width-input").val();
   }
   if ($("#painting-name-input").val() !== "") {
     paint95.canvas.name = $("#painting-name-input").val();
   }
-  $("#modal").css("display", "none");
+  $("#welcome-modal").css("display", "none");
   $("#canvas").css("height", `${paint95.canvas.height}px`);
   $("#canvas").css("width", `${paint95.canvas.width}px`);
   $("#paint-title").text(`${paint95.canvas.name} - ${paint95.meta.title}`);
 });
 
 $("#canvas").on("mousedown", function(e) {
-  paint95.brush.isDrawing = true;
   var dotPosY = e.pageY - $("#canvas").offset().top;
   var dotPosX = e.pageX - $("#canvas").offset().left;
-  paint95.drawing(dotPosX,dotPosY);
- 
+  if (paint95.brush.brushOn) {
+    paint95.brush.isDrawing = true;
+    paint95.drawing(dotPosX,dotPosY);
+  } else {
+    paint95.brush.isErasing = true;
+    paint95.erasing(dotPosX,dotPosY);
+  }
 });
 
 $("#canvas").on("mousemove", function(e) {
   var dotPosY = e.pageY - $("#canvas").offset().top;
   var dotPosX = e.pageX - $("#canvas").offset().left;
-  paint95.drawing(dotPosX,dotPosY);
+  if (paint95.brush.brushOn && paint95.brush.isDrawing) {
+    paint95.drawing(dotPosX,dotPosY);
+  } else  if (paint95.brush.eraserOn && paint95.brush.isErasing) {
+    paint95.erasing(dotPosX,dotPosY);
+  }
 });
 
+$(".dot").on("mousedown", function(e) {
+  if (eraserOn) {
+    e.target.remove();
+  }
+})
+
 $(document).on("mouseup", function() {
-  paint95.brush.isDrawing = false;
+  if (paint95.brush.brushOn) {
+    paint95.brush.isDrawing = false;
+  } else if (paint95.brush.eraserOn) {
+    paint95.brush.isErasing = false;
+  }
 });
 
 $(".color-in-palette").click(function(e) {
   var targetColor = $(e.target).css("background-color");
   paint95.brush.colorOnBrush = targetColor;
   $("#brush").css("background-color", targetColor);
+})
+
+$("#erase-btn").click(function() {
+  paint95.brush.brushOn = false;
+  paint95.brush.eraserOn = true;
+})
+
+$("#brush-btn").click(function() {
+  paint95.brush.brushOn = true;
+  paint95.brush.eraserOn = false;
+})
+
+$("#clear-canvas").click(function() {
+  $("#warning-modal").css("display", "block");
+});
+
+$(".clear-options").click(function(e) {
+  $("#warning-modal").css("display", "none");
+  if ($(e.target).val() === "yes") {
+    $("#canvas").empty();
+  }
 })
