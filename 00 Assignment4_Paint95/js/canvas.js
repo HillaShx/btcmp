@@ -6,7 +6,7 @@ var paint95 = {
     name: "untitled",
     width: "500",
     height: "500",
-    backgroundColor: "white"
+    backgroundColor: "#ffffff"
   },
   colorPalette: [
     "#b24c63",
@@ -123,6 +123,14 @@ var paint95 = {
     paintingName.appendTo("#welcome-message");
     heightInput.appendTo("#welcome-message");
     widthInput.appendTo("#welcome-message");
+    var bgColorInput = $("<input/>");
+    bgColorInput.addClass("canvas-input");
+    bgColorInput.attr("id", "bgcolor-input");
+    bgColorInput.attr("placeholder", "background color (default: #ffffff)");
+    paintingName.appendTo("#welcome-message");
+    heightInput.appendTo("#welcome-message");
+    widthInput.appendTo("#welcome-message");
+    bgColorInput.appendTo("#welcome-message");
     var startButton = $("<button/>");
     startButton.attr("id", "start-button");
     startButton.text("Let's GO!").appendTo("#welcome-message");
@@ -165,9 +173,13 @@ $("#start-button").click(function() {
   if ($("#painting-name-input").val() !== "") {
     paint95.canvas.name = $("#painting-name-input").val();
   }
+  if ($("#bgcolor-input").val() !== "") {
+    paint95.canvas.backgroundColor = $("#bgcolor-input").val();
+  }
   $("#welcome-modal").css("display", "none");
   $("#canvas").css("height", `${paint95.canvas.height}px`);
   $("#canvas").css("width", `${paint95.canvas.width}px`);
+  $("#canvas").css("background-color", paint95.canvas.backgroundColor);
   $("#paint-title").text(`${paint95.canvas.name} - ${paint95.meta.title}`);
 });
 

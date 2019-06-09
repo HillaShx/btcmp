@@ -57,6 +57,7 @@ body {
 
 .canvas-input {
   display: block;
+  width: 240px;
 }
 
 #canvas {
