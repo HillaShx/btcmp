@@ -222,6 +222,8 @@ $(document).on("mouseup", function() {
 $(".color-in-palette").click(function(e) {
   var targetColor = $(e.target).css("background-color");
   paint95.brush.colorOnBrush = targetColor;
+  paint95.brush.brushOn = true;
+  paint95.brush.eraserOn = false;
   $("#brush").css("background-color", targetColor);
 })
 
