@@ -184,8 +184,8 @@ $("#start-button").click(function() {
 });
 
 $("#canvas").on("mousedown", function(e) {
-  var dotPosY = e.pageY - $("#canvas").offset().top;
-  var dotPosX = e.pageX - $("#canvas").offset().left;
+  var dotPosY = e.pageY - $("#canvas").offset().top - (paint95.brush.width/2);
+  var dotPosX = e.pageX - $("#canvas").offset().left - (paint95.brush.width/2);
   if (paint95.brush.brushOn) {
     paint95.brush.isDrawing = true;
     paint95.drawing(dotPosX,dotPosY);
@@ -196,8 +196,8 @@ $("#canvas").on("mousedown", function(e) {
 });
 
 $("#canvas").on("mousemove", function(e) {
-  var dotPosY = e.pageY - $("#canvas").offset().top;
-  var dotPosX = e.pageX - $("#canvas").offset().left;
+  var dotPosY = e.pageY - $("#canvas").offset().top - (paint95.brush.width/2);
+  var dotPosX = e.pageX - $("#canvas").offset().left - (paint95.brush.width/2);
   if (paint95.brush.brushOn && paint95.brush.isDrawing) {
     paint95.drawing(dotPosX,dotPosY);
   } else  if (paint95.brush.eraserOn && paint95.brush.isErasing) {
