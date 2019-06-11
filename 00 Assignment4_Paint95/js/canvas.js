@@ -3,7 +3,7 @@ var paint95 = {
     title: "Paint"
   },
   canvas: {
-    name: "untitled",
+    title: "untitled",
     width: "500",
     height: "500",
     backgroundColor: "#ffffff"
@@ -110,27 +110,27 @@ var paint95 = {
     welcomeMsg.appendTo(welcomeModal);
     var paintingName = $("<input/>");
     paintingName.addClass("canvas-input");
-    paintingName.attr("id", "painting-name-input");
+    paintingName.attr("id", "title");
     paintingName.attr("placeholder", "name (default: untitled)");
     var heightInput = $("<input/>");
     heightInput.addClass("canvas-input");
-    heightInput.attr("id", "height-input");
+    heightInput.attr("id", "height");
     heightInput.attr("placeholder", "height (default: 500)");
     var widthInput = $("<input/>");
     widthInput.addClass("canvas-input");
-    widthInput.attr("id", "width-input");
+    widthInput.attr("id", "width");
     widthInput.attr("placeholder", "width (default: 500)");
     paintingName.appendTo("#welcome-message");
     heightInput.appendTo("#welcome-message");
     widthInput.appendTo("#welcome-message");
-    var bgColorInput = $("<input/>");
-    bgColorInput.addClass("canvas-input");
-    bgColorInput.attr("id", "bgcolor-input");
-    bgColorInput.attr("placeholder", "background color (default: #ffffff)");
+    // var bgColorInput = $("<input/>");
+    // bgColorInput.addClass("canvas-input");
+    // bgColorInput.attr("id", "bgcolor-input");
+    // bgColorInput.attr("placeholder", "background color (default: #ffffff)");
     paintingName.appendTo("#welcome-message");
     heightInput.appendTo("#welcome-message");
     widthInput.appendTo("#welcome-message");
-    bgColorInput.appendTo("#welcome-message");
+    // bgColorInput.appendTo("#welcome-message");
     var startButton = $("<button/>");
     startButton.attr("id", "start-button");
     startButton.text("Let's GO!").appendTo("#welcome-message");
@@ -164,23 +164,20 @@ var paint95 = {
 paint95.initPaint();
 
 $("#start-button").click(function() {
-  if ($("#height-input").val() !== "" && !isNaN($("#width-input").val())) {
-    paint95.canvas.height = $("#height-input").val();
-  }
-  if ($("#width-input").val() !== "" && !isNaN($("#width-input").val())) {
-    paint95.canvas.width = $("#width-input").val();
-  }
-  if ($("#painting-name-input").val() !== "") {
-    paint95.canvas.name = $("#painting-name-input").val();
-  }
-  if ($("#bgcolor-input").val() !== "") {
-    paint95.canvas.backgroundColor = $("#bgcolor-input").val();
+  let inputs = $(".canvas-input");
+  for (let i=0; i<inputs.length; i++){
+    if ($(inputs[i]).attr("id") === "title" && $(inputs[i]).val() !== "") {
+      paint95.canvas[$(inputs[i]).attr("id")] = $(inputs[i]).val();
+    }
+    else if ($(inputs[i]).val() !== "" && !isNaN($(inputs[i]).val())) {
+      paint95.canvas[$(inputs[i]).attr("id")] = $(inputs[i]).val();
+    }
   }
   $("#welcome-modal").css("display", "none");
   $("#canvas").css("height", `${paint95.canvas.height}px`);
   $("#canvas").css("width", `${paint95.canvas.width}px`);
   $("#canvas").css("background-color", paint95.canvas.backgroundColor);
-  $("#paint-title").text(`${paint95.canvas.name} - ${paint95.meta.title}`);
+  $("#paint-title").text(`${paint95.canvas.title} - ${paint95.meta.title}`);
 });
 
 $("#canvas").on("mousedown", function(e) {
@@ -204,12 +201,6 @@ $("#canvas").on("mousemove", function(e) {
     paint95.erasing(dotPosX,dotPosY);
   }
 });
-
-$(".dot").on("mousedown", function(e) {
-  if (eraserOn) {
-    e.target.remove();
-  }
-})
 
 $(document).on("mouseup", function() {
   if (paint95.brush.brushOn) {
