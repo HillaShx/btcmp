@@ -36,5 +36,5 @@ cir.calcArea2 = function() {
 };
 
 function calcShapeArea2(shape) {
-  return shape.calcArea;
+  return shape.calcArea2.call(shape);
 };
