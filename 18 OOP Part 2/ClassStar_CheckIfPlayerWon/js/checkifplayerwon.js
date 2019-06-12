@@ -5,11 +5,7 @@ class Player {
   };
 
   didWin() {
-    if (this.score > 30) {
-      return true;
-    } else {
-      return false;
-    }
+    return this.score > 30;
   };
 
   checkIfPlayerWon() {
