@@ -1,4 +1,4 @@
-var paint95 = {
+let paint95 = {
   meta: {
     title: "Paint"
   },
@@ -24,11 +24,11 @@ var paint95 = {
     width: 3,
   },
   initPaint: function() {
-    var paintHeader = $("<div/>");
+    let paintHeader = $("<div/>");
     paintHeader.addClass("header");
-    var paintTitle = $("<h1/>");
+    let paintTitle = $("<h1/>");
     paintTitle.attr("id", "paint-title")
-    var canvas = $("<div/>");
+    let canvas = $("<div/>");
     canvas.attr("id","canvas");
     canvas.css("background-color", paint95.canvas.backgroundColor);
     paintTitle.appendTo(paintHeader);
@@ -36,19 +36,19 @@ var paint95 = {
     canvas.appendTo("body");
     colorOnBrush = paint95.initPalette();
     paint95.getCanvasInfo();
-    var clearWarning = $("<div/>");
+    let clearWarning = $("<div/>");
     clearWarning.addClass("modal");
     clearWarning.attr("id","warning-modal")
     clearWarning.appendTo("body");
-    var clearMsg = $("<div/>");
+    let clearMsg = $("<div/>");
     clearMsg.attr("id", "warning-message");
     clearMsg.text("Are you sure you want to clear your canvas?");
     clearMsg.appendTo(clearWarning);
-    var confirmClear = $("<button/>");
+    let confirmClear = $("<button/>");
     confirmClear.addClass("clear-options");
     confirmClear.text("YES");
     confirmClear.attr("value", "yes");
-    var denyClear = $("<button/>");
+    let denyClear = $("<button/>");
     denyClear.addClass("clear-options");
     denyClear.text("NO");
     denyClear.attr("value", "no");
@@ -58,65 +58,65 @@ var paint95 = {
   initPalette: function() {
     var colorPalette = $("<div/>");
     colorPalette.attr("id", "color-palette");
-    for (var i=0; i<paint95.colorPalette.length; i++) {
-      var colorItem = $("<div/>");
+    for (let i=0; i<paint95.colorPalette.length; i++) {
+      let colorItem = $("<div/>");
       colorItem.addClass("color-in-palette");
       colorItem.css("background-color", paint95.colorPalette[i]);
       colorItem.appendTo(colorPalette);
     }
     colorPalette.appendTo("body")
-    var currColor = $("<div/>");
+    let currColor = $("<div/>");
     currColor.attr("id", "brush");
-    var colorOnBrush = paint95.colorPalette[0]; 
+    let colorOnBrush = paint95.colorPalette[0]; 
     currColor.css("background-color", colorOnBrush);
-    var colorIndicator = $("<span/>");
+    let colorIndicator = $("<span/>");
     colorIndicator.attr("id", "color-indicator");
     paint95.brush.colorOnBrush = colorOnBrush;
     colorIndicator.text("brush color:")
     colorIndicator.appendTo(colorPalette);
     currColor.appendTo(colorPalette);
-    var eraserBtn = $("<div/>");
+    let eraserBtn = $("<div/>");
     eraserBtn.addClass("operation-btn");
     eraserBtn.attr("id", "erase-btn");
     eraserBtn.appendTo(colorPalette);
-    var brushBtn = $("<div/>");
+    let brushBtn = $("<div/>");
     brushBtn.addClass("operation-btn");
     brushBtn.attr("id", "brush-btn");
     brushBtn.appendTo(colorPalette);
-    var increaseBrushSize = $("<div/>");
+    let increaseBrushSize = $("<div/>");
     increaseBrushSize.addClass("operation-btn");
     increaseBrushSize.attr("id", "increase-brush");
     increaseBrushSize.text("+");
     increaseBrushSize.appendTo(colorPalette)
-    var decreaseBrushSize = $("<div/>");
+    let decreaseBrushSize = $("<div/>");
     decreaseBrushSize.addClass("operation-btn");
     decreaseBrushSize.attr("id", "decrease-brush");
     decreaseBrushSize.text("-");
     decreaseBrushSize.appendTo(colorPalette)
-    var clearBtn = $("<div/>");
+    let clearBtn = $("<div/>");
     clearBtn.addClass("operation-btn");
     clearBtn.attr("id", "clear-canvas");
     clearBtn.text("CLEAR");
     clearBtn.appendTo(colorPalette);
   },
   getCanvasInfo: function() {
-    var welcomeModal = $("<div/>");
+    let welcomeModal = $("<div/>");
     welcomeModal.addClass("modal");
     welcomeModal.attr("id","welcome-modal");
     welcomeModal.appendTo("body");
-    var welcomeMsg = $("<div/>");
+    let welcomeMsg = $("<div/>");
     welcomeMsg.attr("id", "welcome-message");
     welcomeMsg.text("Welcome to Paint! Create your canvas:");
     welcomeMsg.appendTo(welcomeModal);
-    var paintingName = $("<input/>");
+    let paintingName = $("<input/>");
     paintingName.addClass("canvas-input");
     paintingName.attr("id", "title");
     paintingName.attr("placeholder", "name (default: untitled)");
-    var heightInput = $("<input/>");
+    let heightInput = $("<input/>");
     heightInput.addClass("canvas-input");
     heightInput.attr("id", "height");
     heightInput.attr("placeholder", "height (default: 500)");
-    var widthInput = $("<input/>");
+    let widthInput = $("<input/>");
     widthInput.addClass("canvas-input");
     widthInput.attr("id", "width");
     widthInput.attr("placeholder", "width (default: 500)");
@@ -131,13 +131,13 @@ var paint95 = {
     heightInput.appendTo("#welcome-message");
     widthInput.appendTo("#welcome-message");
     // bgColorInput.appendTo("#welcome-message");
-    var startButton = $("<button/>");
+    let startButton = $("<button/>");
     startButton.attr("id", "start-button");
     startButton.text("Let's GO!").appendTo("#welcome-message");
   },
   drawing: function(dotX,dotY) {
     if (paint95.brush.brushOn) {
-      var dot = $("<div/>");
+      let dot = $("<div/>");
       dot.attr("class", "dot");
       dot.css("background-color", paint95.brush.colorOnBrush);
       dot.css("top", dotY + "px");
@@ -149,7 +149,7 @@ var paint95 = {
   },
   erasing: function(dotX, dotY) {
     if (paint95.brush.eraserOn) {
-      var dot = $("<div/>");
+      let dot = $("<div/>");
       dot.attr("class", "dot");
       dot.css("background-color", paint95.canvas.backgroundColor);
       dot.css("top", dotY + "px");
@@ -181,8 +181,8 @@ $("#start-button").click(function() {
 });
 
 $("#canvas").on("mousedown", function(e) {
-  var dotPosY = e.pageY - $("#canvas").offset().top - (paint95.brush.width/2);
-  var dotPosX = e.pageX - $("#canvas").offset().left - (paint95.brush.width/2);
+  let dotPosY = e.pageY - $("#canvas").offset().top - (paint95.brush.width/2);
+  let dotPosX = e.pageX - $("#canvas").offset().left - (paint95.brush.width/2);
   if (paint95.brush.brushOn) {
     paint95.brush.isDrawing = true;
     paint95.drawing(dotPosX,dotPosY);
@@ -193,11 +193,11 @@ $("#canvas").on("mousedown", function(e) {
 });
 
 $("#canvas").on("mousemove", function(e) {
-  var dotPosY = e.pageY - $("#canvas").offset().top - (paint95.brush.width/2);
-  var dotPosX = e.pageX - $("#canvas").offset().left - (paint95.brush.width/2);
+  let dotPosY = e.pageY - $("#canvas").offset().top - (paint95.brush.width/2);
+  let dotPosX = e.pageX - $("#canvas").offset().left - (paint95.brush.width/2);
   if (paint95.brush.brushOn && paint95.brush.isDrawing) {
     paint95.drawing(dotPosX,dotPosY);
-  } else  if (paint95.brush.eraserOn && paint95.brush.isErasing) {
+  } else if (paint95.brush.eraserOn && paint95.brush.isErasing) {
     paint95.erasing(dotPosX,dotPosY);
   }
 });
@@ -211,7 +211,7 @@ $(document).on("mouseup", function() {
 });
 
 $(".color-in-palette").click(function(e) {
-  var targetColor = $(e.target).css("background-color");
+  let targetColor = $(e.target).css("background-color");
   paint95.brush.colorOnBrush = targetColor;
   paint95.brush.brushOn = true;
   paint95.brush.eraserOn = false;
@@ -246,7 +246,7 @@ $("#increase-brush").click(function() {
 })
 
 $("#decrease-brush").click(function() {
-  if (paint95.brush.width => 2) {
+  if (paint95.brush.width >= 2) {
     paint95.brush.width -= 2;
   }
 })
