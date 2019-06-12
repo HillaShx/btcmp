@@ -8,7 +8,9 @@ class Account {
   };
 
   withdraw(amount) {
-    this.sum -= amount;
+    if (this.canWithdraw(amount)) {
+      this.sum -= amount;
+    }
   };
 
   canWithdraw(amount) {
