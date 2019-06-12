@@ -1,4 +1,6 @@
-let memoryGameApp =  {
+"use strict";
+
+let App =  {
   diffLevel: "easy",
   picsForCards: {
     easy: ["axolotl", "birb", "cat", "dog", "frog", "sloth"],
@@ -15,8 +17,8 @@ let memoryGameApp =  {
 
 class Gameboard {
   constructor() {
-    this.picsForCards = memoryGameApp.picsForCards[memoryGameApp.diffLevel];
-    this.numOfCards = memoryGameApp.numOfCards[memoryGameApp.diffLevel];
+    this.picsForCards = App.picsForCards[App.diffLevel];
+    this.numOfCards = App.numOfCards[App.diffLevel];
     this.deck = this.getShuffledDeck();
   };
 
@@ -33,16 +35,30 @@ class Gameboard {
     };
     return deck;
   }
+
+  addClassesToCardElms() {
+    let cardElms = $(".card");
+    for (let i=0;i<cardElms.length; i++) {
+      $(cardElms[i]).addClass(this.deck[i].type)
+      $(cardElms[i]).attr("id", this.deck[i].type + this.deck[i].id);
+    }
+  }
+
+  spreadCardsOnBoard() {
+    let cardElms = $(".card");
+    cardsElm.forEach()
+  }
 }
 
 class Card {
-  constructor(id, pic, isFlipped = false) {
+  constructor(id, type, isFlipped = false) {
     this.id = id;
-    this.pic = `../img/${pic}.jpg`;
+    this.type = type;
+    this.picPath = `../img/${type}.jpg`;
   }
 
   flip() {
-    this.isFlipped = true;
+    this.isFlipped = !this.isFlipped;
   }
 }
 

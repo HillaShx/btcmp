@@ -1,4 +1,60 @@
 .card-box {
-  height: 100px;
+  height: 230px;
   border: 1px solid green;
+}
+
+.card {
+  height: 100%;
+  width: 180px;
+  margin-left: 50%;
+  transform: TranslateX(-50%);
+  border: 1px dotted purple;
+}
+
+.axolotl {
+  background-image: url("../img/axolotl.jpg");
+}
+
+.birb {
+  background-image: url("../img/birb.jpg");
+}
+
+.cat {
+  background-image: url("../img/cat.jpg");
+}
+
+.croc {
+  background-image: url("../img/croc.jpg");
+}
+
+.crow {
+  background-image: url("../img/crow.jpg");
+}
+
+.dog {
+  background-image: url("../img/dog.jpg");
+}
+
+.duck {
+  background-image: url("../img/duck.jpg");
+}
+
+.frog {
+  background-image: url("../img/frog.jpg");
+}
+
+.hedgehog {
+  background-image: url("../img/hedgehog.jpg");
+}
+
+.otter {
+  background-image: url("../img/otter.jpg");
+}
+
+.sloth {
+  background-image: url("../img/sloth.jpg");
+}
+
+.tortoise {
+  background-image: url("../img/tortoise.jpg");
 }
