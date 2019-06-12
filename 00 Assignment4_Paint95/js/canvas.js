@@ -240,9 +240,13 @@ $(".clear-options").click(function(e) {
 });
 
 $("#increase-brush").click(function() {
-  paint95.brush.width += 2;
+  if (paint95.brush.width <= 36) {
+    paint95.brush.width += 2;
+  }
 })
 
 $("#decrease-brush").click(function() {
-  paint95.brush.width -= 2;
+  if (paint95.brush.width => 2) {
+    paint95.brush.width -= 2;
+  }
 })
