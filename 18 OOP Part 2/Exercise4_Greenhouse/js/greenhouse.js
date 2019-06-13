@@ -11,13 +11,7 @@ class Plant {
 
 
 function printBloomingPlants(plants, season) {
-  let bloomingPlants = [];
-  plants.forEach(plant => {
-    if (plant.isBlooming(season)) {
-      bloomingPlants.push(plant);
-    }
-  })
-  return bloomingPlants;
+  return plants.filter(plant => plant.isBlooming(season));
 }
 
 
