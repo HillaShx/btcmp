@@ -23,6 +23,7 @@ class Gameboard {
     let cardElms = $(".frontside");
     for (let i=0;i<cardElms.length; i++) {
       $(cardElms[i]).addClass(this.deck[i].type)
+      $(cardElms[i]).attr("type", this.deck[i].type)
       $(cardElms[i]).attr("id", this.deck[i].type + this.deck[i].id);
     }
   }

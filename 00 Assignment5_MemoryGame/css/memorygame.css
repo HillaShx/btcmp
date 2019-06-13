@@ -1,16 +1,15 @@
 .card-box {
-  height: 230px;
+  /* height: 230px; */
   border: 1px solid green;
   perspective: 600px;
 }
 
 .card {
-  height: 100%;
+  margin: 10px 0;
+  height: 230px;
   width: 160px;
   margin-left: 50%;
   transform: TranslateX(-50%);
-  /* border: 3px dotted purple; */
-  /* border-radius: 4px; */
   position: relative;
   transform-style: preserve-3d;
   transform-origin: center right;
@@ -27,8 +26,6 @@
 }
 
 .frontside {
-  /* margin-left: 80px; */
-  /* left: -80px; */
   transform: rotateY(180deg);
 }
 
@@ -42,7 +39,12 @@
 
 .card.active {
   -webkit-transform: translateX(-100%) rotateY(-180deg);
-  /* transform: rotateY(180deg); */
+  transform: translateX(-100%) rotateY(-180deg);
+  left: -80px;
+}
+
+.is-found {
+  -webkit-transform: translateX(-100%) rotateY(-180deg);
   transform: translateX(-100%) rotateY(-180deg);
   left: -80px;
 }

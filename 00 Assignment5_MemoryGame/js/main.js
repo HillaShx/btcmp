@@ -25,30 +25,35 @@ function placeCardElmsOnBoard() {
   }
 };
 
+function checkIfSameType() {
+  let twoActiveCards = $('.active');
+  if (isPair(twoActiveCards)) {
+    twoActiveCards.addClass("is-found");
+    twoActiveCards.removeClass("active");
+  }
+}
+
+function isPair(twoActiveCards) {
+  return twoActiveCards[0].type === twoActiveCards[1].type;
+}
+
 function startGame() {
   while (gameInPlay) {
+    placeCardElmsOnBoard();
     currGameboard.addClassesToCardElms();
-
+    gameInPlay = false;
   }
 };
 
-
-placeCardElmsOnBoard();
-currGameboard.addClassesToCardElms();
+startGame();
 
 var cards = $('.card');
 cards.click(function(e) {
-  $(e.currentTarget).addClass("active");
-  // console.log(e.currentTarget);
+  let activeCards = $('.active');
+  if (activeCards.length < 1) {
+    $(e.currentTarget).addClass("active");
+  } else if (activeCards.length < 2) {
+    $(e.currentTarget).addClass("active");
+    checkIfSameType();
+  }
 });
-
-// $(".card").forEach(function(element) {
-//   $(element).on("click", function(e) {
-//     $(element).addClass("active");
-//   })
-// })
-
-// $(".card").on("click", function(e) {
-//   // alert("you clicked on a card!");
-//   $(".card").addClass("active");
-// });
