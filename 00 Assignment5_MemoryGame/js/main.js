@@ -44,7 +44,7 @@ cards.click(function(e) {
   $('.active');
   if ($('.active').length < 1) {
     $(e.currentTarget).addClass("active");
-  } else if ($('.active').length < 2) {
+  } else if ($('.active').length < 2 && !$(e.currentTarget).hasClass('active')) {
     $(e.currentTarget).addClass("active");
     if (isPair($('.active'))) {
       $('.active').addClass("is-revealed");

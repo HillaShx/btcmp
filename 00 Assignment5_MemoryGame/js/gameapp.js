@@ -1,5 +1,5 @@
 let App =  {
-  diffLevel: "easy",
+  diffLevel: "medium",
   picsForCards: {
     easy: ["axolotl", "birb", "cat", "dog", "frog", "sloth"],
     medium: ["axolotl", "birb", "cat", "dog", "frog", "sloth", "croc", "crow", "duck"],
