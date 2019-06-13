@@ -1,20 +1,3 @@
-"use strict";
-
-let App =  {
-  diffLevel: "easy",
-  picsForCards: {
-    easy: ["axolotl", "birb", "cat", "dog", "frog", "sloth"],
-    medium: ["croc", "crow", "duck"],
-    hard: ["hedgehog", "otter", "tortoise"]
-  },
-  numOfCards: {
-    easy: 12,
-    medium: 18,
-    hard: 24
-  },
-
-}
-
 class Gameboard {
   constructor() {
     this.picsForCards = App.picsForCards[App.diffLevel];
@@ -37,7 +20,7 @@ class Gameboard {
   }
 
   addClassesToCardElms() {
-    let cardElms = $(".card");
+    let cardElms = $(".frontside");
     for (let i=0;i<cardElms.length; i++) {
       $(cardElms[i]).addClass(this.deck[i].type)
       $(cardElms[i]).attr("id", this.deck[i].type + this.deck[i].id);
@@ -49,18 +32,3 @@ class Gameboard {
     cardsElm.forEach()
   }
 }
-
-class Card {
-  constructor(id, type, isFlipped = false) {
-    this.id = id;
-    this.type = type;
-    this.picPath = `../img/${type}.jpg`;
-  }
-
-  flip() {
-    this.isFlipped = !this.isFlipped;
-  }
-}
-
-
-let currGameboard = new Gameboard();

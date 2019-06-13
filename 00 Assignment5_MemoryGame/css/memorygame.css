@@ -1,60 +1,120 @@
 .card-box {
   height: 230px;
   border: 1px solid green;
+  perspective: 600px;
 }
 
 .card {
   height: 100%;
-  width: 180px;
+  width: 160px;
   margin-left: 50%;
   transform: TranslateX(-50%);
-  border: 1px dotted purple;
+  /* border: 3px dotted purple; */
+  /* border-radius: 4px; */
+  position: relative;
+  transform-style: preserve-3d;
+  transform-origin: center right;
+  left: 0;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.card * {
+  width: 100%;
+  height: 100%;
+  border-radius: 7px;
+  backface-visibility: hidden;
+}
+
+.frontside {
+  /* margin-left: 80px; */
+  /* left: -80px; */
+  transform: rotateY(180deg);
+}
+
+.backside {
+  position: absolute;
+  background-image: url("../img/backside-card.jpg");
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+}
+
+.card.active {
+  -webkit-transform: translateX(-100%) rotateY(-180deg);
+  /* transform: rotateY(180deg); */
+  transform: translateX(-100%) rotateY(-180deg);
+  left: -80px;
 }
 
 .axolotl {
   background-image: url("../img/axolotl.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .birb {
   background-image: url("../img/birb.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .cat {
   background-image: url("../img/cat.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .croc {
   background-image: url("../img/croc.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .crow {
   background-image: url("../img/crow.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .dog {
   background-image: url("../img/dog.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .duck {
   background-image: url("../img/duck.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .frog {
   background-image: url("../img/frog.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .hedgehog {
   background-image: url("../img/hedgehog.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .otter {
   background-image: url("../img/otter.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .sloth {
   background-image: url("../img/sloth.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .tortoise {
   background-image: url("../img/tortoise.jpg");
+  background-size: cover;
+  background-position: center;
 }
