@@ -35,6 +35,7 @@
   background-size: cover;
   background-position: center;
   position: absolute;
+  transform: rotateY(0deg);
 }
 
 .card.active {
@@ -43,7 +44,7 @@
   left: -80px;
 }
 
-.is-found {
+.is-revealed {
   -webkit-transform: translateX(-100%) rotateY(-180deg);
   transform: translateX(-100%) rotateY(-180deg);
   left: -80px;

@@ -25,16 +25,8 @@ function placeCardElmsOnBoard() {
   }
 };
 
-function checkIfSameType() {
-  let twoActiveCards = $('.active');
-  if (isPair(twoActiveCards)) {
-    twoActiveCards.addClass("is-found");
-    twoActiveCards.removeClass("active");
-  }
-}
-
-function isPair(twoActiveCards) {
-  return twoActiveCards[0].type === twoActiveCards[1].type;
+function isPair(cards) {
+  return $(cards[0]).children().attr("type") === $(cards[1]).children().attr("type");
 }
 
 function startGame() {
@@ -49,11 +41,17 @@ startGame();
 
 var cards = $('.card');
 cards.click(function(e) {
-  let activeCards = $('.active');
-  if (activeCards.length < 1) {
+  $('.active');
+  if ($('.active').length < 1) {
     $(e.currentTarget).addClass("active");
-  } else if (activeCards.length < 2) {
+  } else if ($('.active').length < 2) {
     $(e.currentTarget).addClass("active");
-    checkIfSameType();
+    if (isPair($('.active'))) {
+      $('.active').addClass("is-revealed");
+      $('.active').removeClass("active");
+    } else {
+      
+setTimeout(() => $('.active').removeClass('active'),2000);
+    }
   }
 });
