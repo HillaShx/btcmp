@@ -4,7 +4,10 @@ let currGameboard = new Gameboard();
 let gameInPlay = true;
 const gameboardElm = $("#gameboard");
 
-function placeCardElmsOnBoard() {
+function initBoard(currGameboard) {
+  $('.card').removeClass("active is-revealed")
+  let movesCounterElm = $('#moves-counter');
+  movesCounterElm.html(currGameboard.moves);
   for (let i=0; i<App.numOfCards[App.diffLevel]; i++) {
     let cardboxElm = $("<div/>")
     if (App.diffLevel === "medium") {
@@ -29,17 +32,14 @@ function isPair(cards) {
   return $(cards[0]).children().attr("type") === $(cards[1]).children().attr("type");
 }
 
-function startGame() {
-  while (gameInPlay) {
-    placeCardElmsOnBoard();
-    currGameboard.addClassesToCardElms();
-    gameInPlay = false;
-  }
+function startGame(currGameboard) {
+  initBoard(currGameboard);
+  currGameboard.addClassesToCardElms();
 };
 
-startGame();
+startGame(currGameboard);
 
-var cards = $('.card');
+let cards = $('.card');
 cards.click(function(e) {
   $('.active');
   if ($('.active').length < 1) {
@@ -50,8 +50,19 @@ cards.click(function(e) {
       $('.active').addClass("is-revealed");
       $('.active').removeClass("active");
     } else {
-      
-setTimeout(() => $('.active').removeClass('active'),2000);
+      setTimeout(() => $('.active').removeClass('active'),2000);
     }
+    currGameboard.moves++;
+    $('#moves-counter').html(currGameboard.moves);
   }
 });
+
+$('.hamburger').click(function() {
+  $('.hamburger-menu').toggleClass("hide");
+})
+
+$('.btn-new-game').click(function() {
+  currGameboard = new Gameboard();
+  currGameboard.deck = currGameboard.getShuffledDeck();
+  startGame(currGameboard);
+})

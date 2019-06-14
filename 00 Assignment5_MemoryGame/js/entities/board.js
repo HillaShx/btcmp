@@ -3,6 +3,7 @@ class Gameboard {
     this.picsForCards = App.picsForCards[App.diffLevel];
     this.numOfCards = App.numOfCards[App.diffLevel];
     this.deck = this.getShuffledDeck();
+    this.moves = 0;
   };
 
   getShuffledDeck() {
@@ -28,8 +29,8 @@ class Gameboard {
     }
   }
 
-  spreadCardsOnBoard() {
-    let cardElms = $(".card");
-    cardsElm.forEach()
-  }
+  // spreadCardsOnBoard() {
+  //   let cardElms = $(".card");
+  //   cardsElm.forEach()
+  // }
 }

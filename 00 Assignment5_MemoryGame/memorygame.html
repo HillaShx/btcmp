@@ -5,15 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Memory Game</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/memorygame.css">
   </head>
     <body>
     <div class="container-fluid">
       <div class="row header">
-        this is the header. <button>new game</button>
+        <div class="col-1 align-self-center">
+          <h1>MEMORY</h1>
+        </div>
+        <div class="col-1 offset-7 align-self-center" id="counter"><span id="moves-counter"></span><br/>moves</div>
+      <div class="col-2 offset-1 menu">
+        <div class="butn btn-new-game">new game</div>
+        <div class="butn btn-high-score">high score</div>
       </div>
-      <div class="row no-gutters" id="gameboard">
+      <div class="col-1 offset-2 hamburger">
+        <div class="hamburger-layer"></div>
+        <div class="hamburger-layer"></div>
+        <div class="hamburger-layer"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="hamburger-menu hide">
+        <ul>
+          <li class="btn-new-game">new game</li>
+          <li class="btn-high-score">high score</li>
+        </ul>
+      </div>
+    </div>  
+    <div class="row no-gutters" id="gameboard">
         <!-- JS creates my card-boxed dynamically -->
       </div>
     </div>
