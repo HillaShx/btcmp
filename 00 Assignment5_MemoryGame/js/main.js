@@ -1,7 +1,6 @@
 "use strict";
 
 let currGameboard = new Gameboard();
-let gameInPlay = true;
 const gameboardElm = $("#gameboard");
 
 function initBoard(currGameboard) {
@@ -32,37 +31,44 @@ function isPair(cards) {
   return $(cards[0]).children().attr("type") === $(cards[1]).children().attr("type");
 }
 
+function hasWon() {
+  return currGameboard.revealedPairs === currGameboard.deck.length/2;
+}
+
 function startGame(currGameboard) {
   initBoard(currGameboard);
   currGameboard.addClassesToCardElms();
+  let cards = $('.card');
+  cards.click(function(e) {
+    if ($('.active').length < 1) {
+      $(e.currentTarget).addClass("active");
+    } else if ($('.active').length < 2 && !$(e.currentTarget).hasClass('active')) {
+      $(e.currentTarget).addClass("active");
+      if (isPair($('.active'))) {
+        $('.active').addClass("is-revealed");
+        $('.active').removeClass("active");
+        currGameboard.revealedPairs++;
+        if (hasWon()) {
+          // TODO: display victory modal;
+        }
+      } else {
+        setTimeout(() => $('.active').removeClass('active'),2000);
+      }
+      currGameboard.moves++;
+      $('#moves-counter').html(currGameboard.moves);  
+    }
+
+  });
 };
 
 startGame(currGameboard);
-
-let cards = $('.card');
-cards.click(function(e) {
-  $('.active');
-  if ($('.active').length < 1) {
-    $(e.currentTarget).addClass("active");
-  } else if ($('.active').length < 2 && !$(e.currentTarget).hasClass('active')) {
-    $(e.currentTarget).addClass("active");
-    if (isPair($('.active'))) {
-      $('.active').addClass("is-revealed");
-      $('.active').removeClass("active");
-    } else {
-      setTimeout(() => $('.active').removeClass('active'),2000);
-    }
-    currGameboard.moves++;
-    $('#moves-counter').html(currGameboard.moves);
-  }
-});
 
 $('.hamburger').click(function() {
   $('.hamburger-menu').toggleClass("hide");
 })
 
 $('.btn-new-game').click(function() {
+  gameboardElm.html('');
   currGameboard = new Gameboard();
-  currGameboard.deck = currGameboard.getShuffledDeck();
   startGame(currGameboard);
 })

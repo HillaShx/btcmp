@@ -4,12 +4,13 @@ class Gameboard {
     this.numOfCards = App.numOfCards[App.diffLevel];
     this.deck = this.getShuffledDeck();
     this.moves = 0;
+    this.revealedPairs = 0;
   };
 
   getShuffledDeck() {
     let deck = [];
-    for (let i=0; i<this.numOfCards/2; i++) {
-      for (let id=1; id<=2; id++) {
+    for (var i=0; i<this.numOfCards/2; i++) {
+      for (var id=1; id<=2; id++) {
         deck.push(new Card(id,this.picsForCards[i]));
       }
     }
@@ -22,9 +23,9 @@ class Gameboard {
 
   addClassesToCardElms() {
     let cardElms = $(".frontside");
-    for (let i=0;i<cardElms.length; i++) {
-      $(cardElms[i]).addClass(this.deck[i].type)
-      $(cardElms[i]).attr("type", this.deck[i].type)
+    for (let i=0; i<cardElms.length; i++) {
+      $(cardElms[i]).addClass(this.deck[i].type);
+      $(cardElms[i]).attr("type", this.deck[i].type);
       $(cardElms[i]).attr("id", this.deck[i].type + this.deck[i].id);
     }
   }
