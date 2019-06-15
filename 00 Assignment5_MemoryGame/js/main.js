@@ -73,13 +73,14 @@ $('.hamburger').click(function() {
 $('.btn-new-game').click(function() {
   gameboardElm.html('');
   currGameboard = new Gameboard();
-  if (!$('#victory-popup').hasClass('hide')) {
-    $('#victory-popup').addClass('hide');
-  }
   startGame(currGameboard);
 
 })
 
 $('.hamburger-menu li').click(function() {
   $('.hamburger-menu').addClass('hide');
+})
+
+$('#victory-popup .butn').click(function() {
+  $('#victory-popup').addClass('hide');
 })
