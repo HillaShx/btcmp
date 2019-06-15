@@ -10,17 +10,28 @@
     <link rel="stylesheet" href="./css/memorygame.css">
   </head>
     <body>
+      <div id="new-game-popup" class="popup hide">
+        <span class="btn-close-popup">X</span><br/>
+        <h3>Choose difficulty level</h3>
+        <span class="butn diff-level-selector" level="easy">easy</span>
+        <span class="butn diff-level-selector" level="medium">medium</span>
+        <span class="butn diff-level-selector" level="hard">hard</span>
+      </div>
       <div id="victory-popup" class="popup hide">
+        <span class="btn-close-popup">X</span><br/>
         <h1>You won!</h1>
         <h3>It only took <span id="display-moves-count"></span> moves!</h3>
         <span id="enter-score-registration" class="butn">Register your score!</span>
         <span class="btn-new-game butn">New game</span>
       </div>
       <div class="popup hide" id="hiscore-registration-popup">
+        <span class="btn-close-popup">X</span><br/>
         <input type="text" id="playername" placeholder="your name">
         <span class="butn" id="register-hiscore">register</span>
       </div>
       <div class="popup hide" id="hiscore-table-popup">
+        <span class="btn-close-popup">X</span><br/>
+        <h3>High-Score Table <span id="diff-level-score-table">Medium</span></h3>
         <table id="hiscore-table">
           <tr>
             <th>Player Name</th>
@@ -34,8 +45,8 @@
           <div class="col-1 align-self-center">
             <h1>MEMORY</h1>
           </div>
-          <div class="col-1 offset-7 align-self-center" id="counter"><span id="moves-counter"></span><br/>moves</div>
-        <div class="col-2 offset-1 menu">
+          <div class="col-2 offset-6 align-self-center" id="counter"><span id="moves-counter"></span><br/>moves</div>
+        <div class="col-2 menu">
           <div class="butn btn-new-game">new game</div>
           <div class="butn btn-high-scores">high scores</div>
         </div>

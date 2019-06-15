@@ -18,9 +18,9 @@ function initBoard(currGameboard) {
   for (let i=0; i<App.numOfCards[App.diffLevel]; i++) {
     let cardboxElm = $("<div/>")
     if (App.diffLevel === "medium") {
-      cardboxElm.addClass("col-6 col-sm-4 col-md-4 card-box");  
+      cardboxElm.addClass("col-6 col-sm-4 col-md-4 col-lg-2 card-box");  
     } else {
-      cardboxElm.addClass("col-6 col-sm-4 col-md-3 card-box");
+      cardboxElm.addClass("col-6 col-sm-4 col-md-3 col-lg-2 card-box");
     }
     let cardElm = $("<span/>");
     cardElm.addClass("card");
@@ -50,7 +50,7 @@ function startGame(currGameboard) {
   cards.click(function(e) {
     if ($('.active').length < 1) {
       $(e.currentTarget).addClass("active");
-    } else if ($('.active').length < 2 && !$(e.currentTarget).hasClass('active')) {
+    } else if ($('.active').length < 2 && (!$(e.currentTarget).hasClass('active')) && (!$(e.currentTarget).hasClass('is-revealed'))) {
       $(e.currentTarget).addClass("active");
       if (isPair($('.active'))) {
         $('.active').addClass("is-revealed");
@@ -72,8 +72,18 @@ function startGame(currGameboard) {
   });
 };
 
+function hideShownPopup() {
+  for (let i=0; i<$('.popup').length; i++) {
+    if (!$($('.popup')[i]).hasClass('hide')) {
+      $($('.popup')[i]).addClass('hide')
+    }
+  }
+};
+
 function updateHiscoreTable() {
-  $('#hiscore-table').html('          <tr><th id="left">Player Name</th><th id="right">Player Score</th></tr>');
+  let diffLevelTitle = App.diffLevel.charAt(0).toUpperCase() + App.diffLevel.slice(1);
+  $('#diff-level-score-table').html(diffLevelTitle);
+  $('#hiscore-table').html('<tr><th>Player Name</th><th>Player Score</th></tr>');
   let diffLevelStorage = JSON.parse(localStorage[App.diffLevel]);
   for (let prop in diffLevelStorage) {
     let newRow = $('<tr/>');
@@ -94,6 +104,13 @@ $('.hamburger').click(function() {
 })
 
 $('.btn-new-game').click(function() {
+  hideShownPopup();
+  showElm($('#new-game-popup'));
+})
+
+$('.diff-level-selector').click(function(e) {
+  hideElm($('#new-game-popup'));
+  App.diffLevel = $(e.target).attr("level");
   gameboardElm.html('');
   currGameboard = new Gameboard();
   startGame(currGameboard);
@@ -121,4 +138,13 @@ $('#register-hiscore').click(function() {
   updateHiscoreTable();
   hideElm($('#hiscore-registration-popup'));
   showElm($('#hiscore-table-popup'));
+})
+
+$('.btn-high-scores').click(function() {
+  updateHiscoreTable();
+  showElm($('#hiscore-table-popup'));
+})
+
+$('.btn-close-popup').click(function() {
+  hideShownPopup();
 })

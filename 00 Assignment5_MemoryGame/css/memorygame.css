@@ -8,10 +8,6 @@ ul {
   margin: 0;
 }
 
-/* a {
-  text-decoration: none;
-} */
-
 th, td {
   padding: 5px 10px;
 }
@@ -24,7 +20,7 @@ th, td {
   background-color: rgba(250,250,250,0.9);
   border-radius: 12px;
   z-index: 5;
-  padding: 40px 60px;
+  padding: 20px 40px;
 }
 
 .header {
@@ -36,7 +32,7 @@ th, td {
 
 .header .butn {
   width: 50%;
-  margin-left: 50%;
+  margin-left: 100%;
 }
 
 #counter {
@@ -64,8 +60,8 @@ th, td {
 .hamburger-layer {
   border: 3px white solid;
   border-radius: 5px;
-  margin: 18px 10px;
-  width: 80%;
+  margin: 18px 3%;
+  width: 100%;
 }
 
 .hamburger-menu {
@@ -81,23 +77,36 @@ th, td {
   padding: 4px 0;
   margin: 0;
   border-bottom: 1px solid black;
+  cursor: pointer;
 }
 
 .hamburger-menu li:last-child {
   border: none;
 }
 
+#diff-level-score-table {
+  color: #b75d69;
+}
+
 .butn {
+  display: inline-block;
   background-color: #b75d69;
   font-size: 16px;
   border-radius: 8px;
   height: 36px;
   padding: 6px 10px;
-  margin: 12px 8px;
+  margin: 6px 8px;
   cursor: pointer;
 }
 
 .btn-new-game {
+  cursor: pointer;
+}
+
+.btn-close-popup {
+  font-weight: bold;
+  font-size: 23px;
+  float: right;
   cursor: pointer;
 }
 
@@ -238,5 +247,26 @@ th, td {
 
   .menu {
     display: none;
+  }
+}
+
+@media only screen and (max-width: 808px) {
+  #counter {
+    font-size: 14px;
+  }
+
+  .header {
+    margin-top: -20px;
+    height: 90px;
+  }
+}
+
+@media only screen and (max-width: 577px) {
+  #counter {
+    font-size: 12px;
+  }
+
+  .header h1 {
+    font-size: 28px;
   }
 }
