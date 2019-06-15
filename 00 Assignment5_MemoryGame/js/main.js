@@ -3,6 +3,14 @@
 let currGameboard = new Gameboard();
 const gameboardElm = $("#gameboard");
 
+function hideElm(elm) {
+  elm.addClass('hide');
+}
+
+function showElm(elm) {
+  elm.removeClass('hide');
+}
+
 function initBoard(currGameboard) {
   $('.card').removeClass("active is-revealed")
   let movesCounterElm = $('#moves-counter');
@@ -52,7 +60,7 @@ function startGame(currGameboard) {
         if (hasWon()) {
           let victoryPopupElm = $("#victory-popup");
           $('#display-moves-count').html(currGameboard.moves);
-          victoryPopupElm.toggleClass('hide');
+          showElm(victoryPopupElm);
         }
       } else {
         setTimeout(() => $('.active').removeClass('active'),2000);
@@ -64,6 +72,21 @@ function startGame(currGameboard) {
   });
 };
 
+function updateHiscoreTable() {
+  $('#hiscore-table').html('          <tr><th id="left">Player Name</th><th id="right">Player Score</th></tr>');
+  let diffLevelStorage = JSON.parse(localStorage[App.diffLevel]);
+  for (let prop in diffLevelStorage) {
+    let newRow = $('<tr/>');
+    let nameCol = $('<td/>');
+    let scoreCol = $('<td/>');
+    nameCol.html(prop);
+    nameCol.appendTo(newRow);
+    scoreCol.html(diffLevelStorage[prop]);
+    scoreCol.appendTo(newRow);
+    newRow.appendTo($('#hiscore-table'));
+  }
+}
+
 startGame(currGameboard);
 
 $('.hamburger').click(function() {
@@ -74,13 +97,28 @@ $('.btn-new-game').click(function() {
   gameboardElm.html('');
   currGameboard = new Gameboard();
   startGame(currGameboard);
-
+  hideElm($('#hiscore-table-popup'));
 })
 
 $('.hamburger-menu li').click(function() {
-  $('.hamburger-menu').addClass('hide');
+  hideElm($('.hamburger-menu'));
 })
 
 $('#victory-popup .butn').click(function() {
-  $('#victory-popup').addClass('hide');
+  hideElm($('#victory-popup'));
+})
+
+$('#enter-score-registration').click(function() {
+  hideElm($('#victory-popup'));
+  showElm($('#hiscore-registration-popup'));
+})
+
+$('#register-hiscore').click(function() {
+  let playerName = $("#playername");
+  let diffLevelStorage = JSON.parse(localStorage[App.diffLevel]);
+  diffLevelStorage[playerName.val()] = currGameboard.moves;
+  localStorage[App.diffLevel] = JSON.stringify(diffLevelStorage);
+  updateHiscoreTable();
+  hideElm($('#hiscore-registration-popup'));
+  showElm($('#hiscore-table-popup'));
 })

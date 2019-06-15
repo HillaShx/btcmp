@@ -11,3 +11,7 @@ let App =  {
     hard: 24
   }
 }
+
+localStorage["easy"] =  JSON.stringify({});
+localStorage["medium"] = JSON.stringify({});
+localStorage["hard"] = JSON.stringify({});

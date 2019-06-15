@@ -10,11 +10,24 @@
     <link rel="stylesheet" href="./css/memorygame.css">
   </head>
     <body>
-      <div id="victory-popup" class="hide">
+      <div id="victory-popup" class="popup hide">
         <h1>You won!</h1>
         <h3>It only took <span id="display-moves-count"></span> moves!</h3>
-        <span id="register-score" class="butn">Register your score!</span>
+        <span id="enter-score-registration" class="butn">Register your score!</span>
         <span class="btn-new-game butn">New game</span>
+      </div>
+      <div class="popup hide" id="hiscore-registration-popup">
+        <input type="text" id="playername" placeholder="your name">
+        <span class="butn" id="register-hiscore">register</span>
+      </div>
+      <div class="popup hide" id="hiscore-table-popup">
+        <table id="hiscore-table">
+          <tr>
+            <th>Player Name</th>
+            <th>Player Score</th>
+          </tr>
+        </table>
+        <span class="butn btn-new-game">New game</span>
       </div>
       <div class="container-fluid">
         <div class="row header">
