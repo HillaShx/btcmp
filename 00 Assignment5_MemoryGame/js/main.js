@@ -48,13 +48,16 @@ function startGame(currGameboard) {
         $('.active').addClass("is-revealed");
         $('.active').removeClass("active");
         currGameboard.revealedPairs++;
+        currGameboard.moves++;
         if (hasWon()) {
-          // TODO: display victory modal;
+          let victoryPopupElm = $("#victory-popup");
+          $('#display-moves-count').html(currGameboard.moves);
+          victoryPopupElm.toggleClass('hide');
         }
       } else {
         setTimeout(() => $('.active').removeClass('active'),2000);
+        currGameboard.moves++;
       }
-      currGameboard.moves++;
       $('#moves-counter').html(currGameboard.moves);  
     }
 
@@ -70,5 +73,13 @@ $('.hamburger').click(function() {
 $('.btn-new-game').click(function() {
   gameboardElm.html('');
   currGameboard = new Gameboard();
+  if (!$('#victory-popup').hasClass('hide')) {
+    $('#victory-popup').addClass('hide');
+  }
   startGame(currGameboard);
+
+})
+
+$('.hamburger-menu li').click(function() {
+  $('.hamburger-menu').addClass('hide');
 })

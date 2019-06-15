@@ -10,32 +10,38 @@
     <link rel="stylesheet" href="./css/memorygame.css">
   </head>
     <body>
-    <div class="container-fluid">
-      <div class="row header">
-        <div class="col-1 align-self-center">
-          <h1>MEMORY</h1>
+      <div id="victory-popup" class="hide">
+        <h1>You won!</h1>
+        <h3>It only took <span id="display-moves-count"></span> moves!</h3>
+        <span id="register-score" class="butn">Register your score!</span>
+        <span class="btn-new-game butn">New game</span>
+      </div>
+      <div class="container-fluid">
+        <div class="row header">
+          <div class="col-1 align-self-center">
+            <h1>MEMORY</h1>
+          </div>
+          <div class="col-1 offset-7 align-self-center" id="counter"><span id="moves-counter"></span><br/>moves</div>
+        <div class="col-2 offset-1 menu">
+          <div class="butn btn-new-game">new game</div>
+          <div class="butn btn-high-scores">high scores</div>
         </div>
-        <div class="col-1 offset-7 align-self-center" id="counter"><span id="moves-counter"></span><br/>moves</div>
-      <div class="col-2 offset-1 menu">
-        <div class="butn btn-new-game">new game</div>
-        <div class="butn btn-high-score">high score</div>
+        <div class="col-1 offset-2 hamburger">
+          <div class="hamburger-layer"></div>
+          <div class="hamburger-layer"></div>
+          <div class="hamburger-layer"></div>
+        </div>
       </div>
-      <div class="col-1 offset-2 hamburger">
-        <div class="hamburger-layer"></div>
-        <div class="hamburger-layer"></div>
-        <div class="hamburger-layer"></div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="hamburger-menu hide">
-        <ul>
-          <li class="btn-new-game">new game</li>
-          <li class="btn-high-score">high score</li>
-        </ul>
-      </div>
-    </div>  
-    <div class="row no-gutters" id="gameboard">
-        <!-- JS creates my card-boxed dynamically -->
+      <div class="row">
+        <div class="hamburger-menu hide">
+          <ul>
+            <li class="btn-new-game">new game</li>
+            <li class="btn-high-scores">high scores</li>
+          </ul>
+        </div>
+      </div>  
+      <div class="row no-gutters" id="gameboard">
+      <!-- JS creates my card-boxes dynamically -->
       </div>
     </div>
 
