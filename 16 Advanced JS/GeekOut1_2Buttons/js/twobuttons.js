@@ -1,3 +1,5 @@
+"use strict";
+
 const openBtn = {
   msg: "This is the beginning"
 };
@@ -6,17 +8,15 @@ const closeBtn = {
   msg: "Thank you!"
 };
 
-function printMsg(msg) {
-  $("#msg").text(msg);
+function printMsg() {
+  $("#msg").html(this.msg);
 };
 
 $("button").click(function(e) {
-  if ($(e.target) === $("#open-btn")) {
-    msgToAppear = printMsg.call(openBtn, this.msg);
-  } else {
-    msgToAppear = printMsg.call(closeBtn, this.msg);
-  }
+  let printMsgToDOM = printMsg.bind(closeBtn);
+	if ($(e.target).is($("#open-btn"))) {
+	    printMsgToDOM = printMsg.bind(openBtn);
+	}
+	printMsgToDOM();
 });
 
-
-// I've given up and moved on to the assignment
