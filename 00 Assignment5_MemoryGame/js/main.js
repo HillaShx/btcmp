@@ -11,6 +11,14 @@ function showElm(elm) {
   elm.removeClass('hide');
 }
 
+function hideShownPopup() {
+  for (let i=0; i<$('.popup').length; i++) {
+    if (!$($('.popup')[i]).hasClass('hide')) {
+      $($('.popup')[i]).addClass('hide')
+    }
+  }
+};
+
 function initBoard(currGameboard) {
   $('.card').removeClass("active is-revealed")
   let movesCounterElm = $('#moves-counter');
@@ -70,14 +78,6 @@ function startGame(currGameboard) {
     }
 
   });
-};
-
-function hideShownPopup() {
-  for (let i=0; i<$('.popup').length; i++) {
-    if (!$($('.popup')[i]).hasClass('hide')) {
-      $($('.popup')[i]).addClass('hide')
-    }
-  }
 };
 
 function updateHiscoreTable() {
