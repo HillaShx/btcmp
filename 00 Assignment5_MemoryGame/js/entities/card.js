@@ -1,11 +1,7 @@
 class Card {
-  constructor(id, type, isFlipped = false) {
+  constructor(id, type) {
     this.id = id;
     this.type = type;
     this.picPath = `../img/${type}.jpg`;
   };
-
-  flip() {
-    // this.isFlipped = !this.isFlipped;
-  }
 }

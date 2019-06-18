@@ -29,9 +29,4 @@ class Gameboard {
       $(cardElms[i]).attr("id", this.deck[i].type + this.deck[i].id);
     }
   }
-
-  // spreadCardsOnBoard() {
-  //   let cardElms = $(".card");
-  //   cardsElm.forEach()
-  // }
 }
