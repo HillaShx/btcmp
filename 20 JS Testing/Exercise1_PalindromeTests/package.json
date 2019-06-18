@@ -1,0 +1,17 @@
+{
+  "name": "exercise1_palindrometests",
+  "version": "1.0.0",
+  "description": "Testing Palindrome Exercise",
+  "main": "palindrometest.js",
+  "dependencies": {
+    "chai": "^4.2.0"
+  },
+  "devDependencies": {
+    "mocha": "^6.1.4"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "HillaSh",
+  "license": "ISC"
+}
