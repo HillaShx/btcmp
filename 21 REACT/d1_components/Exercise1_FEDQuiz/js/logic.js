@@ -40,7 +40,22 @@ class Q1Title extends React.Component {
 class Q1Input extends React.Component {
     render() {
         return (
-            <input type="range" min="0" max="2"/>
+            <div>
+                <input type="range" min="0" max="2"/>
+                <datalist>
+                    <option value="0" label="0"></option>
+                    <option value="5" label="5"></option>
+                    <option value="10" label="10"></option>
+                </datalist>
+            </div>
+        )
+    }
+}
+
+class FreeInput extends React.Component {
+    render() {
+        return (
+            <input/>
         )
     }
 }
@@ -50,7 +65,7 @@ class Q2 extends React.Component {
         return(
             <div className="question">
                 <Q2Title/>
-                <Q2Input/>
+                <FreeInput/>
             </div>
         )
     }
@@ -64,15 +79,11 @@ class Q2Title extends React.Component {
     }
 }
 
-class Q2Input extends React.Component {
-    render() {
-        return (
-            <input type="text"></input>
-        )
-    }
+function render() {
+    ReactDOM.render(
+        <Quiz/>,
+        document.getElementById("root")
+    );
 }
 
-ReactDOM.render(
-    <Quiz/>,
-    document.getElementById("root")
-);
+render();
