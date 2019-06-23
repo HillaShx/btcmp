@@ -1,0 +1,28 @@
+body {
+    background: thistle;
+}
+
+#tree {
+    background-color: #8bf08e;
+    height: 400px;
+    width: 400px;
+}
+
+#blue {
+    background-color: #86cef5;
+    height: 300px;
+    width: 300px;
+}
+
+#pink {
+    background-color: #ffb6c1;
+    height: 200px;
+    width: 200px;
+}
+
+#purple {
+    background-color: #dda0dc;
+    height: 100px;
+    width: 100px;
+
+}
