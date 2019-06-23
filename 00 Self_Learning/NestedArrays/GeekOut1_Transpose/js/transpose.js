@@ -1,5 +1,5 @@
 function transposeArray(arr) {
-  var transArray = [];;
+  var transArray = [];
   for (var i=0; i<arr.length; i++) {
     var rowLen = arr[i].length;
     transArray.push([]);
