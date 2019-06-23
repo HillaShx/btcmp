@@ -13,5 +13,5 @@ function transposeArray(arr) {
 let expect = require('chai').expect;
 
 it('should return a transposed array', ()=> {
-  expect(transposeArray([[2,3],[4,5]])).is.eql([[2,4],[3,5]);
+  expect(transposeArray([[2,3],[4,5]]).to.eql([[2,4],[3,5]]);
 });
