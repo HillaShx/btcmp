@@ -1,0 +1,197 @@
+@media (orientation: landscape) {
+  :root {
+    --world-edge: 100vh;
+  }
+  .sidemenu {
+    flex-direction: column;
+  }
+  body {
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.45)), url(../img/all-bg.jpg);
+    background-size: contain;
+    background-repeat: repeat-x;
+  }
+  #world-container {
+    flex: 5;
+  }
+  .sidemenu {
+    flex: 1;
+  }
+  .return-btn {
+    display: none;
+  }
+}
+
+@media (orientation: portrait) {
+  :root {
+    --world-edge: 100vw;
+  }
+  .tools-menu {
+    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(../img/ores/dirt.png);
+    background-repeat: repeat repeat;
+    background-size: calc(100%/15);
+  }
+  .first-menu {
+    flex: 1;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0)), #8cbffb;
+  }
+  body {
+    flex-direction: column;
+  }
+}
+
+*, html {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  display: flex;
+  height: inherit;
+  overflow: hidden;
+  font-family: 'Chakra Petch', sans-serif;
+  font-weight: 100;
+}
+
+.return-btn {
+  color: white;
+  align-self: flex-start;
+}
+
+#world-container {
+  display: flex;
+}
+
+#world {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  width: var(--world-edge);
+  height: var(--world-edge);
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.pixel {
+  height: calc(var(--world-edge) / 15);
+  width: calc(var(--world-edge) / 15);
+  background-size: cover;
+  background-position: center;
+}
+
+.pixel:hover {
+  height: calc(var(--world-edge) / 15);
+  width: calc(var(--world-edge) / 15);
+  border: 1px solid #f0f0f0;
+}
+
+.sky {
+  background-color: #8cbffb;
+}
+
+.cloud {
+  background-color: #fff;
+}
+
+.grass {
+  background-image: url('../img/ores/grass.png');
+}
+
+.dirt {
+  background-image: url('../img/ores/dirt.png');
+}
+
+.stone {
+  background-image: url('../img/ores/stone.png')
+}
+
+.wood {
+  background-image: url('../img/ores/wood.png');
+}
+
+.leaf {
+  background-image: url('../img/ores/leaf.jpg');
+}
+
+.sidemenu {
+  display: flex;
+}
+
+#held-ore {
+  margin: calc(var(--world-edge) / 24) auto;
+  height: calc(var(--world-edge) / 15);
+  width: calc(var(--world-edge) / 15);
+  border: 1px solid grey;
+  outline: calc(var(--world-edge) / 150) solid #4e4e4e;
+}
+
+#held-ore:hover {
+  height: calc(var(--world-edge) / 15);
+  width: calc(var(--world-edge) / 15);
+  border: 1px solid #f0f0f0;
+}
+
+.tool {
+  margin: calc(var(--world-edge) / 24) auto;
+  height: calc(var(--world-edge) / 10);
+  width: calc(var(--world-edge) / 10);
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+}
+
+.axe {
+  background-image: url('../img/tools/axe.png');
+}
+
+.pickaxe {
+  background-image: url('../img/tools/pickaxe.png');
+}
+
+.shovel {
+  background-image: url('../img/tools/shovel.png');
+}
+
+.tool-icon {
+  display: inline-block;
+  margin: 0 4px;
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  background-position: center;
+}
+
+.ore-icon {
+  display: inline-block;
+  margin: 0 4px;
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  background-position: center;
+  bottom: 0;
+}
+
+tr {
+  padding: 0;
+}
+
+td {
+  border: 1px grey solid;
+  border-collapse: collapse;
+  align-content: flex-start;
+  padding: 4px 0;
+}
+
+.chosen-tool {
+  background-color: rgba(255, 255, 0, 0.3);
+}
