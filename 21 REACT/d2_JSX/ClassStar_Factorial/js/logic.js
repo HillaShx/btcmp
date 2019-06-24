@@ -1,11 +1,11 @@
 class Factorial extends React.Component {
-    factorial(num) {
+    calc(num) {
         let result = 1;
         if (num === 0) {
             return 0;
         }
         while (num > 0) {
-            result = result * num;
+            result *= num;
             num--;
         }
         return result;
@@ -14,7 +14,7 @@ class Factorial extends React.Component {
         return (
             <div className="display-result">
                 Factorial 5 is:
-                <p>{this.factorial(5)}</p>
+                <p>{this.calc(5)}</p>
             </div>
         )
     }
