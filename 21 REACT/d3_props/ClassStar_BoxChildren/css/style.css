@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box1 {
+    height: 400px;
+    width: 400px;
+    background-color: #8cf08b;
+}
+
+.box2 {
+    height: 300px;
+    width: 300px;
+    background-color: #87cdfd;
+}
+
+.box3 {
+    height: 200px;
+    width: 200px;
+    background-color: #ffb6c1;
+}
+
+.box4 {
+    height: 100px;
+    width: 100px;
+    background-color: #dda0dc;
+}
