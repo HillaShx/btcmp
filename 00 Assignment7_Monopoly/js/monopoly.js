@@ -43,7 +43,7 @@ Monopoly.getPlayersMoney = function(player){
 Monopoly.updatePlayersMoney = function(player,amount){
     var playersMoney = parseInt(player.attr("data-money"));
     playersMoney -= amount;
-    if (playersMoney < 0 ){
+    if (playersMoney <= 0 ){
         alert("you are broke!")
     }
     player.attr("data-money",playersMoney);
@@ -188,8 +188,24 @@ Monopoly.handleChanceCard = function(player){
 
 Monopoly.handleCommunityCard = function(player){
     //TODO: implement this method
-    alert("not implemented yet!")
-    Monopoly.setNextPlayerTurn();
+    var popup = Monopoly.getPopup("community");
+    popup.find(".popup-content").addClass("loading-state");
+    $.get("https://itcmonopoly.appspot.com/get_random_community_card", function(chanceJson){
+        popup.find(".popup-content #text-placeholder").text(chanceJson["content"]);
+        popup.find(".popup-title").text(chanceJson["title"]);
+        popup.find(".popup-content").removeClass("loading-state");
+        popup.find(".popup-content button").attr("data-action",chanceJson["action"]).attr("data-amount",chanceJson["amount"]);
+    },"json");
+    popup.find("button").unbind("click").bind("click",function(){
+        var currentBtn = $(this);
+        var action = currentBtn.attr("data-action");
+        var amount = currentBtn.attr("data-amount");
+        console.log("testing the action and amount " + action + " " + amount)
+        Monopoly.handleAction(player,action,amount);
+    });
+    Monopoly.showPopup("community");
+    // )
+    // Monopoly.setNextPlayerTurn();
 };
 
 
@@ -285,13 +301,17 @@ Monopoly.createPlayers = function(numOfPlayers){
     for (var i=1; i<= numOfPlayers; i++){
         var player = $("<div />").addClass("player shadowed").attr("id","player" + i).attr("title","player" + i + ": $" + Monopoly.moneyAtStart);
         startCell.find(".content").append(player);
-        if (i==1){
+        if (i === 1){
             player.addClass("current-turn");
         }
         player.attr("data-money",Monopoly.moneyAtStart);
     }
 };
 
+Monopoly.removePlayer = function(player) {
+    //TODO: Implement removing a losing player
+    
+}
 
 Monopoly.getNextCell = function(cell){
     var currentCellId = parseInt(cell.attr("id").replace("cell",""));
@@ -320,7 +340,6 @@ Monopoly.isValidInput = function(validate,value){
             }
             //TODO: remove when done
             console.log("the val " + value)
-            isValid = true;
             break;
     }
 
