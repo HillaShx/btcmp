@@ -30,6 +30,16 @@ const features = {
     }
 }
 
+function changeSize() {
+    if ($(`#${this.elmID}`).width() === 400) {
+        $(`#${this.elmID}`).width("350px")
+    .height("350px");
+    } else {
+        $(`#${this.elmID}`).width("400px")
+        .height("400px");
+    }
+}
+
 class App extends React.Component {
     render() {
         return (
@@ -145,23 +155,14 @@ class ServicesStripeFeatureUI extends React.Component {
 class ServicesStripeFeatureUIImg extends React.Component {
     constructor() {
         super();
-        this.changeSize = this.changeSize.bind(this);
+        this.changeSize = changeSize.bind(this);
+        this.elmID = "UI-img";
     }
 
     render() {
         return (
-            <div className="feature-img" id="UI-img" onMouseOver={this.changeSize} onMouseOut={this.changeSize}></div>
+            <div className="feature-img" id={this.elmID} onMouseOver={this.changeSize} onMouseOut={this.changeSize}></div>
         )
-    }
-
-    changeSize() {
-        if ($('#UI-img').width() === 400) {
-            $('#UI-img').width("350px")
-        .height("350px");
-        } else {
-            $('#UI-img').width("400px")
-            .height("400px");
-        }
     }
 }
 
@@ -204,24 +205,14 @@ class ServicesStripeFeatureConcept extends React.Component {
 class ServicesStripeFeatureConceptImg extends React.Component {
     constructor() {
         super();
-        this.changeSize = this.changeSize.bind(this);
+        this.changeSize = changeSize.bind(this);
+        this.elmID = "concept-img";
     }
 
     render() {
         return (
             <div className="feature-img" id="concept-img" onMouseOver={this.changeSize} onMouseOut={this.changeSize}></div>
         )
-    }
-
-    changeSize() {
-        if ($('#concept-img').width() === 400) {
-            $('#concept-img').width("350px")
-            .height("350px");
-        } else {
-            $('#concept-img').width("400px")
-            .height("400px");
-
-        }
     }
 }
 
@@ -263,23 +254,14 @@ class ServicesStripeFeatureDesign extends React.Component {
 class ServicesStripeFeatureDesignImg extends React.Component {
     constructor() {
         super();
-        this.changeSize = this.changeSize.bind(this);
+        this.changeSize = changeSize.bind(this);
+        this.elmID = "design-img";
     }
     
     render() {
         return (
-            <div className="feature-img" id="design-img" onMouseOver={this.changeSize} onMouseOut={this.changeSize}></div>
+            <div className="feature-img" id={this.elmID} onMouseOver={this.changeSize} onMouseOut={this.changeSize}></div>
         )
-    }
-
-    changeSize() {
-        if ($('#design-img').width() === 400) {
-            $('#design-img').width("350px")
-            .height("350px");
-        } else {
-            $('#design-img').width("400px")
-            .height("400px");
-        }
     }
 }
 
