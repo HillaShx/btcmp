@@ -173,6 +173,18 @@ body{
     display:inline-block;
 }
 
+.player.owner {
+    background-image:url(../images/smile.png);
+    background-size:contain;
+    background-position:center;
+}
+
+.player.jailed {
+    background-image:url(../images/frown.png);
+    background-size:contain;
+    background-position:center;
+}
+
 .bottom.game.cell:not(.corner) .player , .top.game.cell:not(.corner) .player{
         width: 40%;
 }
@@ -214,7 +226,7 @@ body{
     width: 25%;
     height: 25%;
     margin: 4%;
-    background-color: black;
+    background-color: #364c9c;
     border-radius: 100px;
     opacity:0;
 }
