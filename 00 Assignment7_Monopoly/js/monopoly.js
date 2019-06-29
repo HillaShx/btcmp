@@ -59,7 +59,7 @@ Monopoly.updatePlayersMoney = function(player,amount){
     playersMoney -= amount;
     if (playersMoney <= 0 ){
         alert("you are broke!")
-        Monopoly.removePlayer()
+        // Monopoly.removePlayer()
     } else {
         player.attr("data-money",playersMoney);
         player.attr("title",player.attr("id") + ": $" + playersMoney);
@@ -85,7 +85,6 @@ Monopoly.rollDice = function(){
 
 
 Monopoly.movePlayer = function(player,steps){
-    //     player.removeClass('owner');
     Monopoly.allowRoll = false;
     var playerMovementInterval = setInterval(function(){
         if (steps == 0){
@@ -98,21 +97,7 @@ Monopoly.movePlayer = function(player,steps){
             steps--;
         }
     },200);
-    // if (Monopoly.selfOwned()) {
-    //     player.addClass('owner');
-    // }
 };
-
-// Monopoly.selfOwned = function() {
-//     let currPlayer = Monopoly.getCurrentPlayer();
-//     if (currPlayer.attr("id") === Monopoly.getPlayersCell(currPlayer).attr("data-owner")) {
-//         console.log(`player: ${currPlayer}`);
-//         console.log(`cell: ${Monopoly.getPlayersCell(currPlayer)}`);
-//         return true;
-//     }
-//     console.log('not selfOwned');
-//     return false;
-// }
 
 Monopoly.handleTurn = function(){
     var player = Monopoly.getCurrentPlayer();
@@ -136,6 +121,7 @@ Monopoly.setNextPlayerTurn = function(){
     var currentPlayerTurn = Monopoly.getCurrentPlayer();
     let nextPlayer;
     switch (Monopoly.doubleCounter) {
+        // in cases of rolling a double
         case 1:
             nextPlayer = currentPlayerTurn;
             break;
@@ -189,7 +175,6 @@ Monopoly.handlePayRent = function(player,propertyCell){
     popup.find("#amount-placeholder").text(currentRent);
     popup.find("button").unbind("click").bind("click",function(){
         var properyOwner = $(".player#"+ properyOwnerId);
-        console.log(properyOwnerId)
         Monopoly.updatePlayersMoney(player,currentRent);
         Monopoly.updatePlayersMoney(properyOwner,-1*currentRent);
         Monopoly.closeAndNextTurn();
@@ -220,7 +205,6 @@ Monopoly.handleChanceCard = function(player){
         var currentBtn = $(this);
         var action = currentBtn.attr("data-action");
         var amount = currentBtn.attr("data-amount");
-        console.log("testing the action and amount " + action + " " + amount)
         Monopoly.handleAction(player,action,amount);
     });
     Monopoly.showPopup("chance");
@@ -240,7 +224,6 @@ Monopoly.handleCommunityCard = function(player){
         var currentBtn = $(this);
         var action = currentBtn.attr("data-action");
         var amount = currentBtn.attr("data-amount");
-        console.log("testing the action and amount " + action + " " + amount)
         Monopoly.handleAction(player,action,amount);
     });
     Monopoly.showPopup("community");
@@ -315,10 +298,8 @@ Monopoly.handleBuy = function(player,propertyCell,propertyCost){
 
 
 Monopoly.handleAction = function(player,action,amount){
-    console.log(action)
     switch(action){
         case "move":
-       	    console.log(amount)
             Monopoly.movePlayer(player,amount);
              break;
         case "pay":
@@ -348,23 +329,19 @@ Monopoly.createPlayers = function(numOfPlayers){
     }
 };
 
-Monopoly.removePlayer = function() {
-    let losingPlayer = Monopoly.getCurrentPlayer();
-    let losingPlayerName = losingPlayer.attr("id");
-    console.log(losingPlayerName);
-    // remove losing player as owner in its own properties
-    let losingPlayerAssets = $(`[data-owner='${losingPlayerName}']`);
-    losingPlayerAssets.removeClass(losingPlayerName);
-    losingPlayerAssets.addClass('available');
-    losingPlayerAssets.removeAttr('data-owner');
-    Monopoly.getNextPlayer(losingPlayer).addClass('current-turn');
-    console.log(losingPlayer);
-    debugger;
-    losingPlayer.remove();
+// NOT WORKING
 
-    // class="bottom game cell available property"
-    // class="bottom game cell property player1"
-}
+// Monopoly.removePlayer = function() {
+//     let losingPlayer = Monopoly.getCurrentPlayer();
+//     let losingPlayerName = losingPlayer.attr("id");
+//     // remove losing player as owner in its own properties
+//     let losingPlayerAssets = $(`[data-owner='${losingPlayerName}']`);
+//     losingPlayerAssets.removeClass(losingPlayerName);
+//     losingPlayerAssets.addClass('available');
+//     losingPlayerAssets.removeAttr('data-owner');
+//     Monopoly.getNextPlayer(losingPlayer).addClass('current-turn');
+//     losingPlayer.remove();
+// }
 
 Monopoly.getNextCell = function(cell){
     var currentCellId = parseInt(cell.attr("id").replace("cell",""));

@@ -173,7 +173,7 @@ body{
     display:inline-block;
 }
 
-.player.owner {
+.player1 #player1, .player2 #player2, .player3 #player3, .player4 #player4 {
     background-image:url(../images/smile.png);
     background-size:contain;
     background-position:center;
