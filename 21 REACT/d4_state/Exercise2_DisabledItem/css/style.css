@@ -1,0 +1,18 @@
+html {
+    background-color: lightcoral;
+}
+
+.butn {
+    display: inline-block;
+    padding: 4px 8px;
+    height: 20px;
+    width: 50px;
+    border-radius: 4px;
+    background-color: white;
+    cursor: context-menu;
+    margin: 0 4px;
+}
+
+.opaque {
+    opacity: 0.5;
+}
