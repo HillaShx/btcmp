@@ -275,7 +275,6 @@ Monopoly.initPopups = function(){
     });
 };
 
-
 Monopoly.handleBuy = function(player,propertyCell,propertyCost){
     var playersMoney = Monopoly.getPlayersMoney(player)
     if (playersMoney < propertyCost){
@@ -293,10 +292,6 @@ Monopoly.handleBuy = function(player,propertyCell,propertyCost){
     }
 };
 
-
-
-
-
 Monopoly.handleAction = function(player,action,amount){
     switch(action){
         case "move":
@@ -312,10 +307,6 @@ Monopoly.handleAction = function(player,action,amount){
     };
     Monopoly.closePopup();
 };
-
-
-
-
 
 Monopoly.createPlayers = function(numOfPlayers){
     var startCell = $(".go");
