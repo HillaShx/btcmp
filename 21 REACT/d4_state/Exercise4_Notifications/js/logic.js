@@ -32,7 +32,6 @@ class Icon extends React.Component {
 
     render() {
         let toShow = this.props.hasNotif && !this.state.isClicked && (this.state.numOfNotif > 0);
-        console.log(toShow);
         return (
             <div onClick={this.popBubble} className="icon" style={{backgroundImage: `url(${this.props.imgUrl})`}}>
                 <div className={`notifications` + (toShow ? "" : " hide")}>{this.state.numOfNotif}</div>
