@@ -7,9 +7,9 @@ class App extends React.Component {
         }
     }
     
-    updateContent(e) {
+    updateContent(text) {
         this.setState({
-            username: e.target.value
+            username: text
         })
         
     }
@@ -26,9 +26,19 @@ class App extends React.Component {
 }
 
 class Input extends React.Component {
+    constructor() {
+        super();
+        this.extractInputValue = this.extractInputValue.bind(this);
+    }
+
+
+    extractInputValue(e) {
+        this.props.handleChange(e.target.value)
+    }
+
     render() {
         return (
-            <input type="text" onChange={this.props.handleChange}/>
+            <input type="text" onChange={this.extractInputValue}/>
         )
     }
 }
