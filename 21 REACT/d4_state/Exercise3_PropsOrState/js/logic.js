@@ -1,7 +1,7 @@
 class App extends React.Component {
     constructor() {
         super();
-        
+
     }
 
     render() {
@@ -21,7 +21,7 @@ class Comp1 extends React.Component {
 
     render() {
         return (
-            <div onClick={this.showHide} style={{visibility: this.props.color}}>Hello~</div>
+            <div style={{ visibility: this.props.color }}>Hello~</div>
         )
     }
 }
@@ -36,7 +36,7 @@ class Comp2 extends React.Component {
 
     render() {
         return (
-            <div style={{visibility: this.state.color}}>Hello~</div>
+            <div style={{ visibility: this.state.color }}>Hello~</div>
         )
     }
 }
