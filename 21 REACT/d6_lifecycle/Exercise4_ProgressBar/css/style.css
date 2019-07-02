@@ -1,0 +1,60 @@
+html, body, h1 {
+    margin: 0;
+    padding: 0;
+}
+
+.card {
+    margin: 0 4px;
+    display: inline-block;
+    position: relative;
+    width: 300px;
+    height: 500px;
+    background-color: #eff8ff;
+}
+
+.title {
+    background-color: #483d8b;
+    color: white;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+}
+
+.percent {
+    width: 150px;
+    height: 150px;
+    background-color: #6394ec;
+    border: 3px solid #324383;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 180px;
+}
+
+.percent-label {
+    font-size: 60px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%)
+}
+
+.progress-bar {
+    border: 3px solid #324383;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 80%;
+    height: 20px;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 60px;
+}
+
+.bar {
+    background-color: green;
+    width: 200%;
+    height: 100%;
+}
