@@ -1,0 +1,13 @@
+html {
+    background-color: lightcoral;
+}
+
+@-webkit-keyframes slidein {
+    from {left: -200px}
+    to {left: 10px}
+}
+
+@keyframes slidein {
+    from {left: -200px}
+    to {left: 10px}
+}
