@@ -12,7 +12,7 @@ class App extends React.Component {
     
     increasePercentage() {
         let increaseAmount = Math.floor(Math.random() * 4 + 1);
-        for(let prop in this.state) { 
+        for (let prop in this.state) { 
             if (this.state.hasOwnProperty(prop)) {
                 if (this.state[prop] + increaseAmount <= 100) {
                     this.setState({
@@ -25,6 +25,10 @@ class App extends React.Component {
 
     componentDidMount() {
         this.progressInterval;
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.progressInterval);
     }
 
     render() {
