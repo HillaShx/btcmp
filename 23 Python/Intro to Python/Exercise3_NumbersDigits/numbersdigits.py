@@ -3,8 +3,9 @@ def analyze_numbers_digits(num):
   print("you've entered the number " + str(num))
   print("the digits of this number are:")
   for digit in str(num):
-    print(int(digit))
+    print(int(digit), end=",")
     sum_of_digits+=int(digit)
+  print()
   print("the sum of these digits is " + str(sum_of_digits))
 
 analyze_numbers_digits(88888)
