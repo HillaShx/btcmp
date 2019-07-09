@@ -10,4 +10,4 @@ def remove_adjacent(l):
 def linear_merge(l1,l2):
   return sorted(l1 + l2)
 
-print(linear_merge([1,4,2],[2,9,3]))
+# print(linear_merge([1,4,2],[2,9,3]))
