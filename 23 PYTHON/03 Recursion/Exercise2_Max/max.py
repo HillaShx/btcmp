@@ -7,4 +7,3 @@ def max_in_list(l, i):
       return max_in_list(l,i+1)
 
 print(max_in_list([3,4,15,6,9,22],0))
-  
