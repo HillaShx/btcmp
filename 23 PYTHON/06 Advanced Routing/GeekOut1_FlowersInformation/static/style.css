@@ -1,0 +1,29 @@
+.desc-text {
+  height: 500px;
+  background-color: aquamarine;
+}
+
+.image {
+  display: inline-block;
+  height: 250px;
+  width: 250px;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.5;
+}
+
+#flower1 {
+  background-image: url('./img/flower1.jpeg');
+}
+
+#flower2 {
+  background-image: url('./img/flower2.jpeg');
+}
+
+#flower3 {
+  background-image: url('./img/flower3.jpg');
+}
+
+.selected {
+  opacity: 1;
+}
