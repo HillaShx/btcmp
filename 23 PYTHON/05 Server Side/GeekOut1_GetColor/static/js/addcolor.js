@@ -27,7 +27,7 @@ function postColor() {
     data: {
       color: $('#color-input').val()
     },
-    contentType: "application/json,",
+    contentType: "application/json",
     success: (response) => {
       $('.msg').empty()
       $('.msg').text(response.msg);
