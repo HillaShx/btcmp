@@ -1,0 +1,16 @@
+<p>
+  <p>My dog is lorem ipsum. She is 
+  {% if is_cute %}
+    adorable.
+  {% else %}
+    meh.
+  {% endif %}
+  </p>
+  <p>These are her favorite treats:</p>
+  <ul>
+    {% for item in treats %}
+    <li>{{ item | capitalize }}</li>
+    {% endfor %}
+  </ul>
+  
+</p>
