@@ -25,7 +25,7 @@ def serve_static(filename):
 def index():
   return static_file('index.html', root='static/')
 
-@get('/flower_desc/<flower>')
+@get('/flowerdesc/<flower>')
 def get_flower_desc(flower):
   return json.dumps(data[data.index(filter(lambda f: f.name == flower, data)[0])])
 

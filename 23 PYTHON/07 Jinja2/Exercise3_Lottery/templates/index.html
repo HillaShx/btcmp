@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up</title>
+  </head>
+  <body>
+    <form action="/post_user_details" method="post">
+      <h2>New User?</h2>
+      <input type="text" name="fname">
+      <input type="text" name="lname">
+      <button id="submit-btn">signup</button>
+    </form>
+    <div id="greeting">
+      <h1>Welcome <span class="fname-display">{{ data.fname }}</span></h1>
+      <p>We lorem ipsum to greet you {{data.fname}} {{data.lname}}</p>
+      {% if data.fname.startswith('g') or data.fname.startswith('G') %}
+        <p>Congrats! Bla bla!</p>
+      {% else %}
+        <p>Better luck next time!</p>
+      {% endif %}
+    </div>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <script src="logic.js"></script>
+  </body>
+</html>
