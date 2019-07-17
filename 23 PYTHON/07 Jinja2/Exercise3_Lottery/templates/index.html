@@ -16,7 +16,7 @@
     <div id="greeting">
       <h1>Welcome <span class="fname-display">{{ data.fname }}</span></h1>
       <p>We lorem ipsum to greet you {{data.fname}} {{data.lname}}</p>
-      {% if data.fname.startswith('g') or data.fname.startswith('G') %}
+      {% if data.fname[0:1] | lower == 'g' %}
         <p>Congrats! Bla bla!</p>
       {% else %}
         <p>Better luck next time!</p>
