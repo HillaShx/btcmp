@@ -5,18 +5,15 @@ b2 = Budew()
 
 def battle(pk1,pk2):
   is_on = True
+  pokes = (pk1,pk2)
   print(f'{pk1} vs {pk2}')
   while is_on:
-    pk1.initiate_attack(pk2)
-    if pk2.is_fainted:
-      is_on = False
-      print(f'{pk1} has won!')
-      break
-    pk2.initiate_attack(pk1)
-    if pk1.is_fainted:
-      is_on = False
-      print(f'{pk2} has won!')
-    
-
+    for i in range(len(pokes)):
+      pokes[i].initiate_attack(pokes[i-1])
+      print(f'{pokes[i-1]}\'s hp: {pokes[i-1].hp}')
+      if pokes[i-1].is_fainted:
+        print(f'{pokes[i]} has won!')
+        return
+  
 
 battle(m1,b2)

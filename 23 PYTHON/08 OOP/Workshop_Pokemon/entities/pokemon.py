@@ -50,6 +50,7 @@ class Pokemon:
     opponents_defense = (opponent.defense + random.randint(1,4))
     attack_delta = my_attack-opponents_defense
     self.get_cry()
+    successful_attack = False
     if my_attack == 0 or attack_delta < 1:
       print('the attack was ineffective')
     elif my_attack > opponents_defense:
@@ -58,9 +59,8 @@ class Pokemon:
         print('the attack was super effective')
       else:
         print('the attack was effective')
-      return True
-
+      successful_attack =  True
     if opponent.hp <= 0:
       opponent.is_fainted = True
-    return False
+    return successful_attack
     
