@@ -1,0 +1,13 @@
+CREATE DATABASE TestDB;
+USE TestDB;
+CREATE TABLE TestTable(
+	testID INT UNIQUE NOT NULL,
+    testName VARCHAR(30),
+    testAge INT NOT NULL
+);
+INSERT INTO TestTable VALUES(
+	45,
+	NULL,
+	54
+);
+SELECT * FROM TestTable;

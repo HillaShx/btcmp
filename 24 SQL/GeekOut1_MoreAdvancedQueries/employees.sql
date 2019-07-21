@@ -1,0 +1,10 @@
+select year(hire_date), count(*) from employees group by year(hire_date);
+select year(hire_date), month(hire_date), count(*) from employees group by year(hire_date), month(hire_date);
+select year(from_date), count(*) from dept_emp group by year(from_date) ;
+select emp_no, avg(salary) from salaries group by emp_no;
+select count(distinct title) from titles;
+select distinct title, count(*) from titles group by title;
+select emp_no, sum(salary) from salaries group by emp_no;
+select emp_no, count(*) from dept_emp group by emp_no order by count(*) desc limit 1;
+select distinct gender, count(*) from employees group by gender;
+select first_name, last_name, birth_date from employees order by birth_date desc limit 10;
