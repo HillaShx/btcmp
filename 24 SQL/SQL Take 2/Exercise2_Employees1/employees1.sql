@@ -20,7 +20,7 @@ where title="Staff"
 order by salary asc
 limit 10;
 
-q5
+-- q5
 select t.title, avg(s.salary) from titles as t
 INNER JOIN salaries as s
 on s.emp_no=t.emp_no
