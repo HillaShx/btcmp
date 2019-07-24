@@ -2,8 +2,6 @@ import pymysql
 
 conn = pymysql.connect(host='localhost', user='root', password='', db='imdb', charset='utf8', cursorclass=pymysql.cursors.DictCursor)
 
-conn = pymysql.connect(host='localhost', user='root', password='', db='imdb', charset='utf8', cursorclass=pymysql.cursors.DictCursor)
-
 if __name__ == "__main__":
     with conn.cursor() as cursor:
       # sql = "ALTER TABLE actors ADD num_of_films INT"
