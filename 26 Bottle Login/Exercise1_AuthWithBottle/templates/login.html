@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>login</title>
+    <style>
+      fieldset {width: 100px};
+      .error {color: red};
+    </style>
+  </head>
+  <body>
+    <form action="/login" method="POST">
+      <fieldset>
+      <legend>username</legend>
+        <input type="text" name="username">
+      </fieldset>
+      <fieldset>
+      <legend>password</legend>
+        <input type="text" name="password">
+      </fieldset>
+      <input type="hidden" value={{next}} name="next">
+      <input type="submit" value="login">
+      <span class="error">{{error_msg}}</span>
+    </form>
+  </body>
+</html>
