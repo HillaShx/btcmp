@@ -8,8 +8,8 @@ create table Cohorts(
 );
 
 create table Students(
-	stu_id INT PRIMARY KEY AUTO_INCREMENT,
-    stu_name VARCHAR(30) NOT NULL,
+	student_id INT PRIMARY KEY AUTO_INCREMENT,
+    student_name VARCHAR(30) NOT NULL,
 	cohort VARCHAR(4),
     FOREIGN KEY (cohort)
 		REFERENCES Cohorts(cohort_id)
