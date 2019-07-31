@@ -2,6 +2,11 @@
 import os
 import sys
 
+# superuser details:
+# username: hillash
+# email: hilla.sh@gmail.com
+# password: ADM1NP4SS
+
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mysite.settings")
     try:
