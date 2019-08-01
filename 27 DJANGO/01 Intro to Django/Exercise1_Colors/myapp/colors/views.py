@@ -16,9 +16,12 @@ def list_colors(request):
 
 def add_color(request, color_name):
   if color_name in colors:
-    return JsonResponse({"error_msg": "color already in our database"})
+    return JsonResponse({"error_msg": "color already in our database"}, status=409)
   colors.append(color_name)
-  return JsonResponse({'success_msg':'color added'})
+  return HttpResponse("color added!", status=201)
 
 def get_color(request, color_name):
-  return HttpResponse(color_name)
+  if color_name in colors:
+    return HttpResponse(color_name)
+  context = {"color_name": color_name}
+  return render(request, "colors/error404.html", context)
