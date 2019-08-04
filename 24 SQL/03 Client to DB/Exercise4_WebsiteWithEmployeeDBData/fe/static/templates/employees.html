@@ -1,0 +1,11 @@
+% include("header.html")
+<h1>Employees</h1>
+  <table>
+  % for emp in emps:
+    <tr>
+      <td>{{ emp["first_name"] }}</td>
+      <td>{{ emp["last_name"] }}</td>
+    </tr>
+  % end
+  </table>
+% include("footer.html")
