@@ -7,11 +7,20 @@
   <title>Posts</title>
 </head>
 <body>
-  <h2>Here are the posts:</h2>
-  <ul>
-  {% for post in posts %}
-    <li>{{ post }}</li>
-  {% endfor %}
+  {% if user.is_authenticated %}
+    Hello, {{ user }}!
+    {% comment %} <a href="{% url 'socialboard:logout' %}">Log Out</a> {% endcomment %}
+    <h2>Here are the posts:</h2>
+    <ul>
+    {% for post in posts %}
+      <li>{{ post }}</li>
+    {% endfor %}
+  {% else %}
+    <a href="{% url 'socialboard:login' %}">Log In</a>
+  {% endif %}
+  {% block content %}
+  
+  {% endblock content %}
   </ul>
 </body>
 </html>
