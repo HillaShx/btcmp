@@ -43,12 +43,11 @@ def add_student():
       return json.dumps({"error_msg": "internal server error"})
     
 
-# {"value_to_be_updated": "cohort","updated_value": "2019"}
 @put('/students/<student_id:int>')
 def update_student(student_id):
   with conn.cursor() as cursor:
     q = request.json
-    # q is the json object ajax sends out comprised of the keys: value_to_be_updated, updated_value
+    # q is the json object ajax sends out comprised of the keys: student_name, cohort
     sql = "UPDATE Students SET student_name = '%s' AND cohort = '%s' WHERE student_id = %d" % (q["student_name"], q["cohort"], student_id)
     try:
       cursor.execute(sql)
