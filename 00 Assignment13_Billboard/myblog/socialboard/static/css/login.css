@@ -1,3 +1,58 @@
 html {
   background-image: linear-gradient(to left, #00FFFF, #8DC26F);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+}
+
+h1 {
+  font-weight: 100;
+  text-align: center;
+}
+
+label {
+  margin: 5px 0;
+}
+
+input {
+  border: none;
+  padding: 15px;
+  margin: 5px 0;
+  background-color: #f2f2f2;
+}
+
+#login-box {
+  background-color: #fff;
+  width: 270px;
+  padding: 45px;
+  margin: 0 auto;
+  margin-top: 80px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24)
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.butn {
+  text-transform: uppercase;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: white;
+  font-weight: 100;
+}
+.butn:hover {
+  background-color: #43A047;
+  cursor: pointer;
+}
+
+#call-for-registration {
+  color: #b3b3b3;
+  font-size: 14px;
+}
+
+#call-for-registration a {
+  color: #4caf50;
+  text-decoration: none;
+
 }
