@@ -6,7 +6,8 @@ app_name = 'socialboard'
 
 urlpatterns = [
   url(r'^$', views.index, name="index"),
-  url(r'^register/$', views.register, name="register"),
-  url(r'^login/$', login, name="login"),
-  url(r'^logout/$', logout, name="logout"),
+  url(r'^register$', views.register, name="register"),
+  url(r'^login$', login, name="login"),
+  url(r'^logout$', logout, name="logout"),
+  url(r'^add_post$', views.add_post, name="add_post")
 ]

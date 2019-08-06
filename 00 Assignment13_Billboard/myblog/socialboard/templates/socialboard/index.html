@@ -36,8 +36,17 @@
   <!-- {% else %}
     <a href="{% url 'socialboard:login' %}">Log In</a>
   {% endif %} -->
+    <div id="new-post-form">
+      <div id="form-container">
+        <form action="{% url 'socialboard:add_post' %}" method="post">
+          <input type="text" id="new-post-title" name="title" placeholder="Post Title">
+          <br/>
+          <textarea name="content" id="new-post-content" rows="5" placeholder="Post Content"></textarea>
+        </form>
+      </div>
+    </div>
     <div id="add-post-container">
-      <div id="add-button"><i class="fas fa-plus"></i></div>
+      <div id="add-button"><a href="{% url 'socialboard:add_post' %}"><i class="fas fa-plus"></i></a></div>
     </div>
   </div>
   {% endblock content %}

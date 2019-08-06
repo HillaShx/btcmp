@@ -93,6 +93,31 @@ h1, h2, p {
   float: right;
 }
 
+#new-post-form {
+  border: 3px dashed #00b7ef;
+  overflow: hidden;
+  /* height: 0px; */
+  /* opacity: 0; */
+}
+
+#form-container {
+  padding: 42px 25px;
+  background-color: green;
+}
+
+#new-post-title {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 30%;
+}
+
+#new-post-content {
+  width: 80%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 80%;
+}
+
 #add-post-container {
   margin: 30px auto;
   max-width: 800px;

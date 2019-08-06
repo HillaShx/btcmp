@@ -40,3 +40,10 @@ def login(request):
       return HttpResponse("Invalid credentials")
   else:
     return render(request, "registration/login.html", {"next": request.GET.get("next", "/")})
+
+def add_post(request):
+  title = request.POST['title']
+  publish_date = None # check how I get the date
+  content = request.POST['content']
+  author = request.user.username
+  
