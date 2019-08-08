@@ -24,9 +24,11 @@
     
     <div id="posts-container">
       {% for post in posts %}
-      <div class="post">
+      <div class="post" post-id={{ post.id }}>
+          
           <span class="date">{{ post.publish_date.day|stringformat:"02d" }}/{{ post.publish_date.month|stringformat:"02d" }}/{{ post.publish_date.year }}</span>
           <div class="post-contents">
+              <a><i class="fa fa-trash trash-post" aria-hidden="true"></i></a>
             <h2 class="title">{{ post.title }}</h2>
             <p class="content">{{ post.content }}</p>
             <div class="author">{{ post.author }}</div>
@@ -36,19 +38,31 @@
   <!-- {% else %}
     <a href="{% url 'socialboard:login' %}">Log In</a>
   {% endif %} -->
-    <div id="new-post-form">
-      <div id="form-container">
-        <form action="{% url 'socialboard:add_post' %}" method="post">
+    <div class="new-post-form dissolve">
+      <span class="date">{{ todays_date }}</span>
+      <form action="{% url 'socialboard:send_post' %}" method="post">
+        <div id="form-container">
+          {% csrf_token %}
           <input type="text" id="new-post-title" name="title" placeholder="Post Title">
           <br/>
+          <p class="error-msg hide"></p>
           <textarea name="content" id="new-post-content" rows="5" placeholder="Post Content"></textarea>
+        </div>
+        <div id="new-post-buttons-container" class="hide">
+            <div class="form-butn" id="discard-post-button"><i class="fas fa-times"></i></div>
+            <div class="form-butn" id="send-post-button"><i class="fas fa-check"></i></div>
+          </div>
         </form>
-      </div>
     </div>
-    <div id="add-post-container">
-      <div id="add-button"><a href="{% url 'socialboard:add_post' %}"><i class="fas fa-plus"></i></a></div>
+    <div id="add-post-button-container">
+      <div class="form-butn" id="add-post-button"><i class="fas fa-plus"></i></div>
     </div>
   </div>
   {% endblock content %}
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+  <script src="{% static 'js/logic.js' %}"></script>
 </body>
 </html>

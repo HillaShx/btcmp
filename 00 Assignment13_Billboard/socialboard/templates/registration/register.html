@@ -1,0 +1,44 @@
+{% extends "socialboard/index.html" %}
+
+{% load static %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock head %} 
+
+{% block title %}
+  Register
+{% endblock title %}
+
+{% block content %}
+  <div id="login-box">
+    <h1>Billboard</h1>
+    {% if form.errors%}
+      <p>Passwords didn't match. Please try again.</p>
+    {% endif %}
+      <form class="form" method="post" action="{% url 'socialboard:register' %}">
+        {% csrf_token%}
+        <label>{{ form.username.label_tag}}</label>
+        {{ form.username}}
+        <label>{{ form.password1.label_tag}}</label>
+        {{ form.password1}}
+        <label>{{ form.password2.label_tag}}</label>
+        {{ form.password2}}
+        <input class="butn" type="submit" value="register" />
+        <input type="hidden" name="next" value="{{ next }}" />
+      </form>
+      <p id="call-for-registration">Already registered? <a href="{% url 'socialboard:login' %}">Log In</a></p>
+  </div>
+{% endblock content %}
+
+{% comment %} {% extends "socialboard/index.html" %}
+
+{% block content %}
+  <h1>Create an account</h1>
+  <form action="{% url 'socialboard:register' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="create user"></input>
+  </form>
+{% endblock %}
+{% endcomment %}

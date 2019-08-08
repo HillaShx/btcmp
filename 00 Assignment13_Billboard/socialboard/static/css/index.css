@@ -13,6 +13,11 @@ h1, h2, p {
   margin: 0;
 }
 
+input, textarea {
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 #greeting {
   font-size: 14px;
 }
@@ -53,7 +58,7 @@ h1, h2, p {
 .post {
   position: relative;
   border: solid 3px #00b7ef;
-  font-size: 16;
+  font-size: 16px;
   color: #c1bfc0;
   margin: 15px auto;
   max-width: 800px;
@@ -71,7 +76,17 @@ h1, h2, p {
 }
 
 .post-contents {
-  padding: 42px 25px;
+  padding: 35px 25px;
+}
+
+.post-contents i {
+  float: right;
+  color: red;
+  font-size: 22px;
+}
+
+.post-contents i:hover {
+  color: crimson;
 }
 
 .title {
@@ -93,47 +108,92 @@ h1, h2, p {
   float: right;
 }
 
-#new-post-form {
+.new-post-form {
   border: 3px dashed #00b7ef;
-  overflow: hidden;
-  /* height: 0px; */
-  /* opacity: 0; */
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  height: 220px;
+  opacity: 1;
+  transition: height 0.7s ease-out 0.3s, opacity 0.7s ease-out 0.3s;
 }
 
 #form-container {
-  padding: 42px 25px;
-  background-color: green;
+  padding: 42px 35px 30px 35px;
+
 }
 
 #new-post-title {
   border: 1px solid #ccc;
   border-radius: 5px;
   width: 30%;
+  margin-bottom: 18px;
 }
 
 #new-post-content {
   width: 80%;
   border: 1px solid #ccc;
   border-radius: 5px;
-  width: 80%;
+  height: 100px;
 }
 
-#add-post-container {
+.error-msg {
+  font-size: 12px;
+  color: red;
+  position: absolute;
+  top: 66px;
+}
+
+.form-butn {
+  width: 46px;
+  background-color: #66cdaa;
+  border-radius: 3px;
+  cursor: pointer;
+  padding: 10px 22px;
+  text-align: center;
+  margin: 4px auto;
+}
+
+.form-butn i {
+  color: #fff;
+}
+
+.butn-container {
+  margin-top: 20px;
+  
+}
+
+#discard-post-button {
+  background-color: red;
+  display: inline-block;
+}
+
+#send-post-button {
+  display: inline-block;
+}
+
+#new-post-buttons-container {
+  margin: 30px auto;
+  max-width: 800px;
+  border: 1px dashed black;
+  text-align: center;
+}
+
+#add-post-button-container {
   margin: 30px auto;
   max-width: 800px;
   border: 1px dashed black;
 }
 
-#add-button {
-  width: 46px;
-  font-size: 16px;
-  background-color: #66cdaa;
-  color: #fff;
-  border-radius: 3px;
-  cursor: pointer;
-  padding: 4px 12px;
-  text-align: center;
-  margin: 4px auto;
+
+.hide {
+  display: none;
+}
+
+.dissolve {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
 }
 
 @media only screen and (max-width: 800px) {

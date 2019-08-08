@@ -9,5 +9,7 @@ urlpatterns = [
   url(r'^register$', views.register, name="register"),
   url(r'^login$', login, name="login"),
   url(r'^logout$', logout, name="logout"),
-  url(r'^add_post$', views.add_post, name="add_post")
+  url(r'^delete_post$', views.delete_post, name="delete_post"),
+  url(r'^send_post$', views.send_post, name="send_post"),
+  # url(r'^dicard_post$', views.discard_post, name="discard_post"),
 ]
